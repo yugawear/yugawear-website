@@ -1,0 +1,407 @@
+/* ==========================================
+            YUGA ANIMATIONS
+========================================== */
+
+
+/* Smooth Scrolling */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+/* Default transition */
+
+*{
+
+    transition:
+
+        background .35s ease,
+
+        color .35s ease,
+
+        transform .35s ease,
+
+        opacity .35s ease,
+
+        box-shadow .35s ease;
+
+}
+
+
+/* ===========================
+        BUTTON
+=========================== */
+
+.btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-120%;
+
+    top:0;
+
+    width:120%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.15);
+
+    transform:skewX(-25deg);
+
+}
+
+.btn:hover::before{
+
+    left:120%;
+
+}
+
+
+/* ===========================
+        PRODUCT CARD
+=========================== */
+
+.product-card{
+
+    cursor:pointer;
+
+}
+
+.product-card img{
+
+    transition:transform .6s;
+
+}
+
+.product-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+/* ===========================
+        COLLECTION
+=========================== */
+
+.collection-card{
+
+    overflow:hidden;
+
+}
+
+.collection-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.15);
+
+    opacity:0;
+
+    transition:.4s;
+
+}
+
+.collection-card:hover::after{
+
+    opacity:1;
+
+}
+
+
+/* ===========================
+        STORY IMAGE
+=========================== */
+
+.story-right{
+
+    overflow:hidden;
+
+}
+
+.story-right img{
+
+    transition:transform .8s;
+
+}
+
+.story-right:hover img{
+
+    transform:scale(1.06);
+
+}
+
+
+/* ===========================
+        NAVBAR
+=========================== */
+
+.header{
+
+    transition:
+
+        padding .4s,
+
+        background .4s;
+
+}
+
+
+/* ===========================
+        LOGO
+=========================== */
+
+.logo img{
+
+    transition:.4s;
+
+}
+
+.logo:hover img{
+
+    transform:scale(1.05);
+
+}
+
+
+/* ===========================
+        LINK
+=========================== */
+
+.nav a{
+
+    position:relative;
+
+}
+
+.nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-8px;
+
+    left:0;
+
+    width:0;
+
+    height:2px;
+
+    background:#F26A21;
+
+    transition:.35s;
+
+}
+
+.nav a:hover::after{
+
+    width:100%;
+
+}
+
+
+/* ===========================
+        FADE UP
+=========================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(70px);
+
+    transition:1s;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+
+/* ===========================
+        IMAGE ZOOM
+=========================== */
+
+.zoom{
+
+    overflow:hidden;
+
+}
+
+.zoom img{
+
+    transition:1s;
+
+}
+
+.zoom:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+/* ===========================
+        SOCIAL ICON
+=========================== */
+
+.social a:hover{
+
+    color:#F26A21;
+
+}
+
+
+/* ===========================
+        INPUT
+=========================== */
+
+input{
+
+    transition:.3s;
+
+}
+
+input:focus{
+
+    border-color:#F26A21;
+
+}
+
+
+/* ===========================
+        SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#F26A21;
+
+    border-radius:100px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#ff7b36;
+
+}
+
+
+/* ===========================
+        FADE
+=========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+.fade-up{
+
+    animation:fadeUp 1s ease forwards;
+
+}
+
+
+/* ===========================
+        FLOAT
+=========================== */
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.float{
+
+    animation:floating 5s ease-in-out infinite;
+
+}
+
+
+/* Button Hover */
+.btn{
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        background .35s ease;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
