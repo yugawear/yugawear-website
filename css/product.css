@@ -1,0 +1,962 @@
+/*=========================
+    PRODUCT HERO
+=========================*/
+
+.product-hero{
+
+    padding:100px 0 100px;
+
+    background:#fafafa;
+
+}
+
+.product-wrapper{
+
+    display:grid;
+
+    grid-template-columns:1.2fr 1fr;
+
+    gap:80px;
+
+    align-items:start;
+
+}
+
+.product-gallery{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.product-thumbnails{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.product-thumbnails img{
+
+    width:90px;
+
+    cursor:pointer;
+
+    border:2px solid transparent;
+
+    transition:.3s;
+
+}
+
+.product-thumbnails img.active{
+
+    border-color:#E96A00;
+
+}
+
+.product-main-image{
+
+    flex:1;
+
+}
+
+.product-main-image img{
+
+    width:100%;
+
+    border-radius:12px;
+
+}
+
+.product-category{
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    color:#888;
+
+    font-size:13px;
+
+}
+
+.product-info h1{
+
+    font-size:58px;
+
+    margin:15px 0;
+
+    color: #F26A21;
+
+}
+
+.product-info h3{
+
+    color:#666;
+
+    margin-bottom:25px;
+
+}
+
+.price{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+}
+
+.short-description{
+
+    color:#666;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}
+
+.rating{
+
+    margin-bottom:30px;
+
+}
+
+.rating span{
+
+    color:#888;
+
+    margin-left:10px;
+
+}
+
+.sizes{
+
+    display:flex;
+
+    gap:15px;
+
+    margin:20px 0 35px;
+
+}
+
+.sizes button{
+
+    width:55px;
+
+    height:55px;
+
+    background:white;
+
+    border:1px solid #ddd;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.sizes button.active{
+
+    background:#F26A21;
+
+    color:white;
+
+}
+
+.quantity{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin:20px 0 40px;
+
+}
+
+.quantity button{
+
+    width:45px;
+
+    height:45px;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+}
+
+.cart-btn,
+.buy-btn{
+
+    width:100%;
+
+    padding:18px;
+
+    font-size:16px;
+
+    margin-bottom:15px;
+
+}
+
+.product-features{
+
+    margin-top:35px;
+
+}
+
+.product-features div{
+
+    margin-bottom:15px;
+
+    color:#555;
+
+}
+
+
+
+.header{
+
+    background:#ffffff;
+
+    border-bottom:1px solid #eee;
+
+}
+
+.nav a{
+
+    color:#111;
+
+}
+
+.nav-icons a{
+
+    color:#111;
+
+}
+
+
+.header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(0,0,0,.06);
+
+}
+
+.product-colors{
+
+    margin:35px 0;
+
+}
+
+.color-options{
+
+    display:flex;
+
+    gap:16px;
+
+}
+
+.color{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    border:2px solid #ddd;
+
+    background:white;
+
+    cursor:pointer;
+
+    padding:5px;
+
+    transition:.3s;
+
+}
+
+.color span{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    border-radius:50%;
+
+}
+
+.color.active{
+
+    border:2px solid #E96A00;
+
+    transform:scale(1.08);
+
+}
+
+.product-badge{
+
+    display:inline-block;
+
+    background:#111;
+
+    color:white;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+.product-features{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:35px;
+
+}
+
+.product-features div{
+
+    padding:10px 18px;
+
+    border:1px solid #ddd;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    background:white;
+    color: #F26A21;
+
+}
+/* size button */
+.sizes button{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.sizes button:hover{
+
+    border-color:#E96A00;
+
+}
+/* T-shirt number */
+.quantity{
+
+    display:flex;
+
+    align-items:center;
+
+    border:1px solid #ddd;
+
+    width:160px;
+
+    justify-content:space-between;
+
+    border-radius:12px;
+
+}
+/* buy now button */
+.buy-btn{
+
+    background:#111;
+
+    color:white;
+
+    border-radius:10px;
+
+    padding:20px;
+
+    font-size:17px;
+
+    font-weight:700;
+
+}
+
+.buy-btn:hover{
+
+    background:#E96A00;
+
+}
+/* Add to cart */
+.cart-btn{
+
+    background:white;
+
+    color:#111;
+
+    border:2px solid #111;
+
+    border-radius:10px;
+
+}
+
+/* better galary ui */
+.product-thumbnails{
+
+    gap:18px;
+
+}
+
+.thumb{
+
+    border-radius:10px;
+
+    transition:.35s;
+
+}
+
+.thumb:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* galary scroll */
+.product-info{
+
+    position:sticky;
+
+    top:120px;
+
+}
+
+/* add to cart button */
+.cart-btn{
+
+    width:100%;
+
+    padding:18px;
+
+    border:2px solid #111;
+
+    background:white;
+
+    color:#111;
+
+    border-radius:12px;
+
+    font-weight:700;
+
+    transition:
+        background .3s,
+        color .3s,
+        transform .25s,
+        box-shadow .25s;
+
+    cursor:pointer;
+
+}
+.cart-btn:hover{
+
+    background:#111;
+
+    color:white;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.15);
+
+}
+.cart-btn:active{
+
+    transform:scale(.98);
+
+}
+/* buy now  */
+.buy-btn{
+
+    transition:
+        background .3s,
+        transform .25s,
+        box-shadow .25s;
+
+}
+
+.buy-btn:hover{
+
+    background:#E96A00;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(233,106,0,.35);
+
+}
+
+/* colour button of T-shirt */
+.color-options{
+
+    display:flex;
+
+    gap:28px;
+
+    align-items:flex-start;
+
+    margin-top: 5%;
+
+}
+
+.color-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.color-item p{
+
+    margin:0;
+
+    font-size:13px;
+
+    font-weight:500;
+
+    color:#666;
+
+    transition:.3s;
+
+}
+
+.color{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    border:2px solid #ddd;
+
+    background:#fff;
+
+    padding:5px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.color span{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    border-radius:50%;
+
+}
+
+.color.active{
+
+    border-color:#E96A00;
+
+    transform:scale(1.08);
+
+}
+
+.color.active + p{
+
+    color:#F26A21;
+
+    font-weight:600;
+
+}
+
+/*====================================
+        PRODUCT ACCORDION
+====================================*/
+
+.product-information{
+
+    padding:100px 0;
+
+    background:#fff;
+
+}
+
+.accordion{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.accordion-item{
+
+    border-bottom:1px solid #e8e8e8;
+
+}
+
+.accordion-header{
+
+    width:100%;
+
+    background:none;
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:28px 0;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#111;
+
+    transition:.3s;
+
+}
+
+.accordion-header:hover{
+
+    color:#E96A00;
+
+}
+
+.accordion-header i{
+
+    font-size:18px;
+
+    transition:.35s;
+
+}
+
+.accordion-item.active .accordion-header i{
+
+    transform:rotate(45deg);
+
+}
+
+.accordion-content{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .4s ease;
+
+}
+
+.accordion-item.active .accordion-content{
+
+    max-height:600px;
+
+    padding-bottom:30px;
+
+}
+
+.accordion-content p{
+
+    color:#555;
+
+    line-height:1.9;
+
+    font-size:16px;
+
+}
+
+.accordion-content ul{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+.accordion-content li{
+
+    padding:8px 0;
+
+    color:#555;
+
+}
+
+.size-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:20px;
+
+}
+
+.size-table th,
+.size-table td{
+
+    border-bottom:1px solid #eee;
+
+    padding:16px;
+
+    text-align:left;
+
+}
+
+.size-table th{
+
+    color:#111;
+
+}
+.product-information{
+
+    padding:40px 0 100px;
+}
+
+
+
+
+/*====================================
+        RELATED PRODUCTS
+====================================*/
+
+.related-products{
+
+    padding:120px 0;
+
+    background:#fafafa;
+
+}
+
+.section-heading{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.section-heading span{
+
+    color:#888;
+
+    letter-spacing:3px;
+
+    font-size:13px;
+
+}
+
+.section-heading h2{
+
+    font-size:48px;
+
+    margin:15px 0;
+
+}
+
+.section-heading p{
+
+    color:#666;
+
+}
+
+.related-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:35px;
+
+}
+
+.related-card{
+
+    text-decoration:none;
+
+    color:#111;
+
+}
+
+.related-image{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:14px;
+
+    background:#fff;
+
+    aspect-ratio:4/5;
+
+}
+
+.related-image img{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.45s;
+
+}
+
+.back-img{
+
+    opacity:0;
+
+}
+
+.related-card:hover .front-img{
+
+    opacity:0;
+
+}
+
+.related-card:hover .back-img{
+
+    opacity:1;
+
+}
+
+.related-card:hover .related-image img{
+
+    transform:scale(1.04);
+
+}
+
+.related-content{
+
+    padding:18px 5px;
+
+}
+
+.related-content span{
+
+    font-size:12px;
+
+    color:#888;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+.related-content h3{
+
+    margin:10px 0;
+
+    font-size:22px;
+
+}
+
+.related-content p{
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+
+
+/* =================================
+   PRODUCT PRICING
+================================= */
+
+.price-box {
+    margin: 20px 0 28px;
+}
+
+.sale-price {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #111;
+}
+
+.price-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.original-price {
+    font-size: 17px;
+    color: #777;
+    text-decoration: line-through;
+    text-decoration-thickness: 1.5px;
+}
+
+.save-price {
+    font-size: 13px;
+    font-weight: 700;
+    color: #f26522;
+    letter-spacing: 0.3px;
+}
+
+.price-benefits {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 13px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+}

@@ -1,0 +1,244 @@
+.about-inspiration {
+    padding-top: 26px;
+
+    background: #fff;
+}
+
+.inspiration-content h3{
+    color: black;
+}
+.inspiration-content p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #777;
+    padding-bottom: 26px;
+}
+
+
+
+/* =========================================================
+   YUGA COLLECTION CARD — CLICKABLE ARCHITECTURE
+========================================================= */
+
+/*
+   Make the entire card behave like a premium
+   editorial link.
+*/
+
+.inspiration-card-link {
+
+    display: block;
+
+    position: relative;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.inspiration-card-link .inspiration-image {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   IMAGE ZOOM
+========================================================= */
+
+.inspiration-card-link
+.inspiration-image img {
+
+    transition:
+        transform 0.7s cubic-bezier(.2,.7,.2,1);
+
+}
+
+
+.inspiration-card-link:hover
+.inspiration-image img {
+
+    transform: scale(1.045);
+
+}
+
+
+/* =========================================================
+   HOVER ARROW
+========================================================= */
+
+.inspiration-card-arrow {
+
+    position: absolute;
+
+    top: 22px;
+
+    right: 22px;
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    border-radius: 50%;
+
+    opacity: 0;
+
+    transform:
+        translateY(8px);
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+
+}
+
+
+.inspiration-card-link:hover
+.inspiration-card-arrow {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.inspiration-card-arrow i {
+
+    font-size: 13px;
+
+    transition:
+        transform .25s ease;
+
+}
+
+
+.inspiration-card-link:hover
+.inspiration-card-arrow i {
+
+    transform:
+        translateX(2px);
+
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.inspiration-card-link
+.inspiration-content {
+
+    position: relative;
+
+}
+
+
+/* =========================================================
+   EXPLORE SERIES
+========================================================= */
+
+.inspiration-explore {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 18px;
+
+    color: #ff5a00;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.inspiration-explore i {
+
+    transition:
+        transform .25s ease;
+
+}
+
+
+.inspiration-card-link:hover
+.inspiration-explore i {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.inspiration-card-link:focus-visible {
+
+    outline:
+        2px solid #ff5a00;
+
+    outline-offset:
+        5px;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /*
+       On mobile there is no hover,
+       so make the CTA permanently visible.
+    */
+
+    .inspiration-card-arrow {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+
+    .inspiration-explore {
+
+        margin-top: 15px;
+
+    }
+
+}

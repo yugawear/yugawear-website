@@ -1,0 +1,1519 @@
+/* =========================================================
+   YUGA WEAR
+   SHIPPING POLICY
+   PREMIUM EDITORIAL LEGAL PAGE
+========================================================= */
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --shipping-black: #0b0b0b;
+
+    --shipping-dark: #111111;
+
+    --shipping-orange: #f56600;
+
+    --shipping-orange-dark: #df5900;
+
+    --shipping-white: #ffffff;
+
+    --shipping-off-white: #fafafa;
+
+    --shipping-soft: #f5f5f5;
+
+    --shipping-border: #e8e8e8;
+
+    --shipping-muted: #777777;
+
+    --shipping-text: #222222;
+
+}
+
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.shipping-hero {
+
+    background: #ffffff;
+
+    padding: 110px 0 85px;
+
+    border-bottom: 1px solid var(--shipping-border);
+
+}
+
+
+.shipping-hero-inner {
+
+    max-width: 900px;
+
+}
+
+
+.shipping-eyebrow {
+
+    display: inline-block;
+
+    margin-bottom: 24px;
+
+    color: var(--shipping-orange);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+}
+
+
+.shipping-hero h1 {
+
+    margin: 0;
+
+    color: var(--shipping-black);
+
+    font-size: clamp(60px, 8vw, 108px);
+
+    line-height: .92;
+
+    letter-spacing: -5px;
+
+    font-weight: 800;
+
+}
+
+
+.shipping-hero h1 span {
+
+    color: var(--shipping-orange);
+
+}
+
+
+.shipping-hero p {
+
+    max-width: 680px;
+
+    margin: 35px 0 28px;
+
+    color: #666;
+
+    font-size: 19px;
+
+    line-height: 1.75;
+
+}
+
+
+.shipping-updated {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #777;
+
+    font-size: 13px;
+
+}
+
+
+.shipping-updated i {
+
+    color: var(--shipping-orange);
+
+}
+
+
+
+/* =========================================================
+   QUICK SHIPPING SUMMARY
+========================================================= */
+
+.shipping-summary {
+
+    padding: 45px 0;
+
+    background: var(--shipping-black);
+
+}
+
+
+.shipping-summary-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 1px;
+
+    background: #2c2c2c;
+
+}
+
+
+.shipping-summary-card {
+
+    min-height: 190px;
+
+    padding: 28px;
+
+    background: var(--shipping-black);
+
+}
+
+
+.shipping-summary-card.featured {
+
+    background: var(--shipping-orange);
+
+}
+
+
+.summary-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 50%;
+
+    background: #1e1e1e;
+
+    color: var(--shipping-orange);
+
+}
+
+
+.shipping-summary-card.featured
+.summary-icon {
+
+    background: rgba(255,255,255,.18);
+
+    color: white;
+
+}
+
+
+.shipping-summary-card > span {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #999;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.shipping-summary-card.featured > span {
+
+    color: rgba(255,255,255,.75);
+
+}
+
+
+.shipping-summary-card strong {
+
+    display: block;
+
+    color: white;
+
+    font-size: 32px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+}
+
+
+.shipping-summary-card p {
+
+    margin: 5px 0 0;
+
+    color: #888;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+.shipping-summary-card.featured p {
+
+    color: rgba(255,255,255,.8);
+
+}
+
+
+
+/* =========================================================
+   POLICY MAIN
+========================================================= */
+
+.shipping-policy {
+
+    padding: 110px 0 130px;
+
+    background: #ffffff;
+
+}
+
+
+.shipping-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        240px minmax(0, 820px);
+
+    gap: 100px;
+
+    justify-content: center;
+
+    align-items: start;
+
+}
+
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.shipping-sidebar {
+
+    position: sticky;
+
+    top: 120px;
+
+}
+
+
+.shipping-sidebar-inner {
+
+    border-left: 1px solid #ddd;
+
+    padding-left: 22px;
+
+}
+
+
+.shipping-sidebar-inner > span {
+
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: #999;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.shipping-sidebar nav {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.shipping-sidebar nav a {
+
+    position: relative;
+
+    padding: 7px 0;
+
+    color: #777;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    transition:
+
+        color .25s ease,
+
+        transform .25s ease;
+
+}
+
+
+.shipping-sidebar nav a:hover {
+
+    color: var(--shipping-orange);
+
+    transform: translateX(4px);
+
+}
+
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.shipping-introduction {
+
+    margin-bottom: 85px;
+
+    padding-bottom: 55px;
+
+    border-bottom: 1px solid var(--shipping-border);
+
+}
+
+
+.shipping-introduction p {
+
+    margin: 0;
+
+    color: #444;
+
+    font-size: 21px;
+
+    line-height: 1.8;
+
+}
+
+
+.shipping-introduction strong {
+
+    color: var(--shipping-black);
+
+}
+
+
+
+/* =========================================================
+   POLICY SECTION
+========================================================= */
+
+.shipping-section {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 65px minmax(0, 1fr);
+
+    gap: 28px;
+
+    scroll-margin-top: 120px;
+
+    margin-bottom: 90px;
+
+}
+
+
+.section-number {
+
+    color: var(--shipping-orange);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    padding-top: 8px;
+
+}
+
+
+.section-content {
+
+    min-width: 0;
+
+}
+
+
+.section-content h2 {
+
+    margin: 0 0 28px;
+
+    color: var(--shipping-black);
+
+    font-size: 28px;
+
+    line-height: 1.15;
+
+    letter-spacing: -.8px;
+
+    font-weight: 800;
+
+}
+
+
+.section-content p {
+
+    margin: 0 0 20px;
+
+    color: #555;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+}
+
+
+.section-content p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+.section-content strong {
+
+    color: #222;
+
+    font-weight: 700;
+
+}
+
+
+
+/* =========================================================
+   LISTS
+========================================================= */
+
+.section-content ul {
+
+    margin: 15px 0 25px;
+
+    padding: 0;
+
+    list-style: none;
+
+}
+
+
+.section-content li {
+
+    position: relative;
+
+    padding: 6px 0 6px 24px;
+
+    color: #555;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+}
+
+
+.section-content li::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 3px;
+
+    top: 15px;
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--shipping-orange);
+
+}
+
+
+
+/* =========================================================
+   HIGHLIGHT BOX
+========================================================= */
+
+.highlight-box {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+
+    padding: 24px 28px;
+
+    background: var(--shipping-off-white);
+
+    border-left: 4px solid var(--shipping-orange);
+
+}
+
+
+.highlight-box span {
+
+    color: #888;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.highlight-box strong {
+
+    color: var(--shipping-black);
+
+    font-size: 18px;
+
+}
+
+
+
+/* =========================================================
+   NOTICE BOX
+========================================================= */
+
+.notice-box {
+
+    display: flex;
+
+    gap: 15px;
+
+    align-items: flex-start;
+
+    margin: 28px 0;
+
+    padding: 20px 22px;
+
+    background: #fff8f3;
+
+    border: 1px solid #ffe1ce;
+
+    border-radius: 8px;
+
+}
+
+
+.notice-box i {
+
+    flex-shrink: 0;
+
+    margin-top: 4px;
+
+    color: var(--shipping-orange);
+
+}
+
+
+.notice-box p {
+
+    margin: 0;
+
+    color: #555;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+.notice-box.important {
+
+    background: #fff8f3;
+
+}
+
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.timeline {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 70px 1fr;
+
+    align-items: center;
+
+    margin: 30px 0;
+
+}
+
+
+.timeline-item {
+
+    padding: 22px;
+
+    background: var(--shipping-off-white);
+
+    border: 1px solid var(--shipping-border);
+
+}
+
+
+.timeline-item span {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #999;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.timeline-item strong {
+
+    font-size: 17px;
+
+}
+
+
+.timeline-line {
+
+    height: 1px;
+
+    background: var(--shipping-orange);
+
+}
+
+
+
+/* =========================================================
+   TOTAL TIME
+========================================================= */
+
+.total-time-box {
+
+    margin: 30px 0;
+
+    padding: 32px;
+
+    background: var(--shipping-black);
+
+}
+
+
+.total-time-box span {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #999;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.total-time-box strong {
+
+    color: white;
+
+    font-size: 25px;
+
+    letter-spacing: -.5px;
+
+}
+
+
+
+/* =========================================================
+   TRACKING
+========================================================= */
+
+.tracking-box {
+
+    display: flex;
+
+    gap: 20px;
+
+    align-items: flex-start;
+
+    margin-bottom: 28px;
+
+    padding: 28px;
+
+    background: var(--shipping-black);
+
+}
+
+
+.tracking-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--shipping-orange);
+
+    color: white;
+
+}
+
+
+.tracking-box strong {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: white;
+
+    font-size: 18px;
+
+}
+
+
+.tracking-box p {
+
+    margin: 0;
+
+    color: #aaa;
+
+}
+
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+.policy-email,
+.inline-link {
+
+    color: var(--shipping-orange);
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid transparent;
+
+    transition: border-color .25s ease;
+
+}
+
+
+.policy-email:hover,
+.inline-link:hover {
+
+    border-color: var(--shipping-orange);
+
+}
+
+
+
+/* =========================================================
+   CONTACT POLICY BOX
+========================================================= */
+
+.contact-policy-box {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    padding: 30px;
+
+    background: var(--shipping-off-white);
+
+    border: 1px solid var(--shipping-border);
+
+}
+
+
+.contact-policy-box strong {
+
+    margin-bottom: 5px;
+
+    color: var(--shipping-black);
+
+    font-size: 18px;
+
+}
+
+
+.contact-policy-box span {
+
+    color: #666;
+
+    font-size: 14px;
+
+}
+
+
+.contact-policy-box a {
+
+    color: var(--shipping-orange);
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+}
+
+
+
+/* =========================================================
+   FINAL SUMMARY
+========================================================= */
+
+.shipping-final-summary {
+
+    margin-top: 30px;
+
+    padding: 45px;
+
+    background: var(--shipping-off-white);
+
+    border: 1px solid var(--shipping-border);
+
+}
+
+
+.final-summary-heading > span {
+
+    color: var(--shipping-orange);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.final-summary-heading h2 {
+
+    margin: 10px 0 35px;
+
+    color: var(--shipping-black);
+
+    font-size: 38px;
+
+    letter-spacing: -1.5px;
+
+}
+
+
+.final-summary-list {
+
+    border-top: 1px solid #ddd;
+
+}
+
+
+.final-summary-list > div {
+
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    gap: 25px;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid #ddd;
+
+}
+
+
+.final-summary-list span {
+
+    color: #888;
+
+    font-size: 13px;
+
+}
+
+
+.final-summary-list strong {
+
+    color: #222;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+}
+
+
+.summary-disclaimer {
+
+    margin: 30px 0 0;
+
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* =========================================================
+   HELP CTA
+========================================================= */
+
+.shipping-help {
+
+    padding: 90px 0;
+
+    background: blanchedalmond;
+
+}
+
+
+.shipping-help-inner {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 50px;
+
+}
+
+
+.shipping-help-inner > div:first-child > span {
+
+    color: var(--shipping-orange);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.shipping-help-inner h2 {
+
+    margin: 12px 0 8px;
+
+    color:black;
+
+    font-size: 46px;
+
+    letter-spacing: -1.5px;
+
+}
+
+
+.shipping-help-inner p {
+
+    margin: 0;
+
+    color: #999;
+
+    font-size: 15px;
+
+}
+
+
+.shipping-help-actions {
+
+    display: flex;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+
+}
+
+
+.shipping-help-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    min-width: 170px;
+
+    padding: 16px 22px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    transition:
+
+        transform .25s ease,
+
+        background .25s ease,
+
+        color .25s ease;
+
+}
+
+
+.shipping-help-button:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+.shipping-help-button.primary {
+
+    background: var(--shipping-orange);
+
+    color: white;
+
+}
+
+
+.shipping-help-button.primary:hover {
+
+    background: var(--shipping-orange-dark);
+
+}
+
+
+.shipping-help-button.secondary {
+
+    background: transparent;
+
+    border: 1px solid #F26A21;
+
+    color:#F26A21;
+
+}
+
+
+.shipping-help-button.secondary:hover {
+
+    border-color: #f26a21;
+    color:#25D366;
+
+}
+
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .shipping-layout {
+
+        grid-template-columns:
+            190px minmax(0, 1fr);
+
+        gap: 55px;
+
+    }
+
+
+    .shipping-summary-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .shipping-help-inner {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .shipping-hero {
+
+        padding: 80px 0 60px;
+
+    }
+
+
+    .shipping-hero h1 {
+
+        font-size: 58px;
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .shipping-hero p {
+
+        font-size: 16px;
+
+        line-height: 1.7;
+
+    }
+
+
+    .shipping-summary {
+
+        padding: 20px 0;
+
+    }
+
+
+    .shipping-summary-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .shipping-summary-card {
+
+        min-height: 160px;
+
+        padding: 20px;
+
+    }
+
+
+    .shipping-summary-card strong {
+
+        font-size: 26px;
+
+    }
+
+
+    .shipping-policy {
+
+        padding: 70px 0 80px;
+
+    }
+
+
+    .shipping-layout {
+
+        display: block;
+
+    }
+
+
+    .shipping-sidebar {
+
+        position: relative;
+
+        top: auto;
+
+        margin-bottom: 55px;
+
+    }
+
+
+    .shipping-sidebar-inner {
+
+        padding: 20px;
+
+        border: 1px solid var(--shipping-border);
+
+        background: var(--shipping-off-white);
+
+    }
+
+
+    .shipping-sidebar nav {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 3px 15px;
+
+    }
+
+
+    .shipping-sidebar nav a {
+
+        padding: 8px 0;
+
+    }
+
+
+    .shipping-introduction {
+
+        margin-bottom: 60px;
+
+        padding-bottom: 40px;
+
+    }
+
+
+    .shipping-introduction p {
+
+        font-size: 18px;
+
+    }
+
+
+    .shipping-section {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 10px;
+
+        margin-bottom: 70px;
+
+    }
+
+
+    .section-number {
+
+        padding-top: 0;
+
+    }
+
+
+    .section-content h2 {
+
+        font-size: 25px;
+
+        margin-bottom: 22px;
+
+    }
+
+
+    .section-content p,
+    .section-content li {
+
+        font-size: 14px;
+
+    }
+
+
+    .highlight-box {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+
+    }
+
+
+    .timeline {
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+    }
+
+
+    .timeline-line {
+
+        width: 1px;
+
+        height: 25px;
+
+        margin-left: 25px;
+
+    }
+
+
+    .total-time-box {
+
+        padding: 25px;
+
+    }
+
+
+    .total-time-box strong {
+
+        font-size: 21px;
+
+    }
+
+
+    .tracking-box {
+
+        padding: 22px;
+
+    }
+
+
+    .shipping-final-summary {
+
+        padding: 28px 22px;
+
+    }
+
+
+    .final-summary-heading h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    .final-summary-list > div {
+
+        grid-template-columns: 1fr;
+
+        gap: 6px;
+
+    }
+
+
+    .shipping-help {
+
+        padding: 70px 0;
+
+    }
+
+
+    .shipping-help-inner h2 {
+
+        font-size: 38px;
+
+    }
+
+
+    .shipping-help-actions {
+
+        width: 100%;
+
+        flex-direction: column;
+
+    }
+
+
+    .shipping-help-button {
+
+        width: 100%;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .shipping-summary-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .shipping-sidebar nav {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .shipping-hero h1 {
+
+        font-size: 50px;
+
+    }
+
+}

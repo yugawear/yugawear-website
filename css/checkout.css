@@ -1,0 +1,376 @@
+/*====================================
+        CHECKOUT
+====================================*/
+
+.checkout-page{
+
+    padding:80px 0 120px;
+
+}
+
+.checkout-layout{
+
+    display:grid;
+
+    grid-template-columns:1.7fr 0.9fr;
+
+    gap:80px;
+
+    align-items:start;
+
+}
+
+.checkout-form h2{
+
+    font-size:34px;
+
+    margin-bottom:40px;
+
+}
+
+.checkout-summary{
+
+    position:sticky;
+
+    top:120px;
+
+}
+
+/*====================================
+        FORM
+====================================*/
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:28px;
+
+}
+
+.form-group label{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+}
+
+.form-group input,
+.form-group textarea{
+
+    width:100%;
+
+    padding:16px 18px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-family:inherit;
+
+    transition:.25s;
+
+    background:#fff;
+
+}
+
+.form-group textarea{
+
+    resize:vertical;
+
+    min-height:120px;
+
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(255,102,0,.08);
+
+}
+.checkout-summary{
+
+    background:#fff;
+
+    border:1px solid #ececec;
+
+    border-radius:18px;
+
+    padding:34px;
+
+}
+
+.checkout-summary h2{
+
+    margin-bottom:30px;
+
+}
+
+.checkout-summary hr{
+
+    margin:28px 0;
+
+    border:none;
+
+    border-top:1px solid #eee;
+
+}
+.checkout-item{
+
+    display:grid;
+
+    grid-template-columns:60px 1fr auto;
+
+    gap:16px;
+
+    align-items:center;
+
+    margin-bottom:24px;
+
+}
+
+.checkout-item img{
+
+    width:60px;
+
+    height:60px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+}
+
+.checkout-item h4{
+
+    font-size:15px;
+
+    margin-bottom:6px;
+
+}
+
+.checkout-item p{
+
+    color:#666;
+
+    font-size:13px;
+
+}
+
+.checkout-item small{
+
+    color:#888;
+
+}
+.checkout-hero{
+    margin-top: 2%;
+}
+.checkout-hero h1{
+    color:#F26A21 ;
+}
+
+/*=========================
+    FORM VALIDATION
+=========================*/
+
+.form-group{
+    margin-bottom:24px;
+}
+
+.form-group input.error,
+.form-group textarea.error{
+
+    border:1px solid #e53935;
+
+}
+
+.error-message{
+
+    color:#e53935;
+
+    font-size:13px;
+
+    margin-top:6px;
+
+    display:none;
+
+}
+
+.error-message.show{
+
+    display:block;
+
+}
+
+
+.checkout-button:disabled{
+
+    opacity:.75;
+
+    cursor:not-allowed;
+
+}
+
+.checkout-button i{
+
+    margin-right:10px;
+
+}
+
+
+/*====================================
+        CHECKOUT SECTIONS
+====================================*/
+
+.checkout-section{
+
+    background:#fff;
+
+    border:1px solid #ececec;
+
+    border-radius:18px;
+
+    padding:34px;
+
+    margin-bottom:36px;
+
+}
+
+.section-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:30px;
+
+}
+
+.section-title i{
+
+    font-size:20px;
+
+    color:var(--primary);
+
+}
+
+.section-title h2{
+
+    font-size:24px;
+
+    margin:0;
+
+}
+.form-row{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+.phone-input{
+
+    display:flex;
+
+    align-items:center;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+}
+
+.phone-input:focus-within{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(255,102,0,.08);
+
+}
+
+.phone-input span{
+
+    background:#fafafa;
+
+    padding:0 18px;
+
+    font-weight:600;
+
+    color:#444;
+
+    border-right:1px solid #eee;
+
+    height:56px;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.phone-input input{
+
+    border:none;
+
+    box-shadow:none;
+
+    flex:1;
+
+}
+
+.phone-input input:focus{
+
+    outline:none;
+
+}
+label span{
+
+    font-size:12px;
+
+    color:#888;
+
+    font-weight:400;
+
+}
+.section-title h2{
+    color: #F26A21;
+    letter-spacing: 0px !important;
+    
+}
+
+/* Checkout mobile view */
+@media (max-width: 768px) {
+.checkout-layout{
+display: flex;
+flex-direction: column;
+gap: 40px;
+}
+.checkout-page {
+    padding: 6px 0 120px;
+}
+.checkout-hero, .cart-hero {
+    padding: 30px 0 30px;
+}
+.checkout-summary{
+    width: 100%;
+}
+}

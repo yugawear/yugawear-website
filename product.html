@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- META DATA -->
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <title>YUGA | India Reimagined</title> -->
+     <title>YUGA WEAR | India Reimagined – Premium Indian Streetwear</title>
+
+    <!-- <meta name="description"
+        content="Premium Indian streetwear inspired by architecture, scripts, culture and timeless heritage."> -->
+
+    <meta
+    name="description"
+    content="Discover YUGA, a premium Indian streetwear brand inspired by architecture, art, scripts, and timeless heritage. Modern culture. Contemporary design.">    
+
+    <meta
+    name="keywords"
+    content="YUGA WEAR, Indian streetwear, oversized t-shirts, premium clothing, India reimagined, heritage fashion">
+
+    <meta name="author" content="YUGA WEAR">
+
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0B0B0B">
+
+    <meta property="og:title" content="YUGA | India Reimagined">
+
+    <meta property="og:description" content="Modern Indian streetwear inspired by architecture, art and heritage.">
+
+    <meta property="og:image" content="https://yugawear.com/images/og-image.jpg">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:url" content="https://yugawear.com">
+
+    <meta name="twitter:card"content="summary_large_image">
+
+    <meta name="twitter:title" content="YUGA | India Reimagined">
+
+    <meta name="twitter:description" content="Premium Indian streetwear inspired by heritage.">
+
+    <meta name="twitter:image"content="https://yugawear.com/images/og-image.jpg">
+
+    <!-- LINKS -->
+    <link rel="canonical" href="https://yugawear.com/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/cart.css">
+
+    <link rel="icon" type="image/x-icon" href="/images/android-chrome-512x512.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+
+        {
+        "@context":"https://schema.org",
+        "@type":"Organization",
+
+        "name":"YUGA WEAR",
+
+        "url":"https://yugawear.com",
+
+        "logo":"https://yugawear.com/images/logo.jpg",
+
+        "sameAs":[
+            "https://instagram.com/yuga.wear"
+        ]
+
+        }
+
+        </script>
+</head>
+
+
+<body>
+<!-- ==========================================
+     GLOBAL NAVBAR
+========================================== -->
+
+<div id="globalNavbar"></div>
+
+<!-- ============================
+        PRODUCT HERO
+============================= -->
+
+<section class="product-hero">
+
+    <div class="container">
+
+        <div class="product-wrapper">
+
+            <!-- LEFT -->
+
+            <div class="product-gallery">
+
+                <div class="product-thumbnails"
+                    id="thumbnailContainer">
+
+                </div>
+
+                <div class="product-main-image">
+
+                    <img
+                        id="mainImage"
+                        src=""
+                        alt="YUGA Product">
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="product-info">
+
+                <span
+                    class="product-category"
+                    id="productCategory">
+                </span>
+
+                <h1 id="productName"></h1>
+
+                <h3>
+                    Premium Oversized Tee
+                </h3>
+
+                <div class="price-box">
+
+                    <div class="sale-price" id="productPrice">
+                        ₹1,499
+                    </div>
+
+                    <div class="price-meta">
+
+                        <span class="original-price" id="productOriginalPrice">
+                            ₹1,699
+                        </span>
+
+                        <span class="save-price" id="productSave">
+                            SAVE ₹200
+                        </span>
+
+                    </div>
+
+                    <div class="price-benefits">
+
+                        <span>Free shipping</span>
+
+                        <span>·</span>
+
+                        <span>All taxes included</span>
+
+                    </div>
+
+                </div>
+
+                <p
+                    class="short-description"
+                    id="productDescription">
+                </p>
+
+                <div class="rating">
+
+                    ★★★★★
+
+                    <span>(Reviews Coming Soon)</span>
+
+                </div>
+
+                <!-- cloth colour button -->
+                <div class="product-colors">
+
+                    <h4>Colour</h4>
+
+                    <div
+                        class="color-options"
+                        id="colorOptions">
+                    </div>
+
+                </div>
+
+                <h4>Select Size</h4>
+
+                <div class="sizes">
+
+                    <button class="size-btn">XS</button>
+                    <button class="size-btn">S</button>
+                    <button class="size-btn">M</button>
+                    <button class="size-btn active">L</button>
+                    <button class="size-btn">XL</button>
+                    <button class="size-btn">XXL</button>
+
+                </div>
+
+                <h4>Quantity</h4>
+
+                <div class="quantity">
+
+                    <button id="minus">−</button>
+
+                    <span id="qty">1</span>
+
+                    <button id="plus">+</button>
+
+                </div>
+
+                <button
+                    class="cart-btn"
+                    id="addToCart"
+                    data-id=""
+                    data-name=""
+                    data-price=""
+                    data-category="">
+
+                    ADD TO CART
+
+                </button>
+
+                <button
+                    class="buy-btn"
+                    id="buyNow">
+
+                    BUY NOW
+
+                </button>
+
+                <div class="product-features">
+
+                    <div>✓ 240 GSM Heavyweight Cotton</div>
+
+                    <div>✓ SUPER COMBED</div>
+
+                    <div>✓ PRE-SHRUNK</div>
+
+                    <div>✓ BIO WASHED</div>
+
+                    <div>✓ Premium DTG Print</div>
+
+                    <div>✓ Oversized Fit</div>
+
+                    <div>✓ Free Shipping Across India</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+            PRODUCT INFORMATION
+========================================== -->
+
+<section class="product-information">
+
+    <div class="container">
+
+        <div class="accordion">
+
+            <!-- ABOUT -->
+
+            <div class="accordion-item">
+
+                <button class="accordion-header">
+
+                    <span>ABOUT THIS DESIGN</span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="accordion-content">
+
+                    <p>
+
+                        Built during the 11th century in Patan, Gujarat,
+                        Rani Ki Vav is one of India's greatest architectural
+                        masterpieces. This artwork transforms its intricate
+                        carvings into contemporary streetwear, allowing
+                        heritage to be worn every day.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT DETAILS -->
+
+            <div class="accordion-item">
+
+                <button class="accordion-header">
+
+                    <span>PRODUCT DETAILS</span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="accordion-content">
+
+                    <ul>
+
+                        <li>240 GSM Heavyweight Cotton</li>
+
+                        <li>100% Cotton</li>
+
+                        <li>Super Combed</li>
+
+                        <li>Bio Washed</li>
+
+                        <li>Pre-Shrunk</li>
+
+                        <li>Lycra Ribbed Neck</li>
+
+                        <li>Premium DTG Print</li>
+
+                        <li>Oversized Fit</li>
+
+                        <li>Unisex</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- SIZE GUIDE -->
+
+            <div class="accordion-item">
+
+                <button class="accordion-header">
+
+                    <span>SIZE GUIDE</span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="accordion-content">
+
+                    <table class="size-table">
+
+                        <tr>
+
+                            <th>Size</th>
+                            <th>Chest</th>
+                            <th>Length</th>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>XS</td>
+                            <td>38"</td>
+                            <td>27"</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>S</td>
+                            <td>40"</td>
+                            <td>28"</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>M</td>
+                            <td>42"</td>
+                            <td>29"</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>L</td>
+                            <td>44"</td>
+                            <td>30"</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>XL</td>
+                            <td>46"</td>
+                            <td>31"</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>XXL</td>
+                            <td>48"</td>
+                            <td>32"</td>
+
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARE -->
+
+            <div class="accordion-item">
+
+                <button class="accordion-header">
+
+                    <span>CARE INSTRUCTIONS</span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="accordion-content">
+
+                    <ul>
+
+                        <li>🧺 Machine wash cold</li>
+
+                        <li>🧼 Wash inside out</li>
+
+                        <li>🚫 Do not bleach</li>
+
+                        <li>🌤 Dry in shade</li>
+
+                        <li>🧲 Cool iron if needed</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- SHIPPING -->
+
+            <div class="accordion-item">
+
+                <button class="accordion-header">
+
+                    <span>SHIPPING & RETURNS</span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="accordion-content">
+
+                    <ul>
+
+                        <li>Free Shipping Across India</li>
+
+                        <li>Ships within 2–4 Business Days</li>
+
+                        <li>Easy Returns & Exchanges</li>
+
+                        <li>Secure Payments</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- You May Also like -->
+    <!-- ==========================================
+                YOU MAY ALSO LIKE
+========================================== --> 
+<!-- ==========================================
+            YOU MAY ALSO LIKE
+========================================== -->
+
+<section class="related-products">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>DISCOVER MORE</span>
+
+            <h2>You May Also Like</h2>
+
+            <p>
+                Explore more pieces from the YUGA collection.
+            </p>
+
+        </div>
+
+        <div class="related-grid">
+
+            <!-- CARD 1 -->
+
+            <a href="product.html?id=rani-ki-vav" class="related-card">
+
+                <div class="related-image">
+
+                    <img src="images/products/Rani Ki vav/white/back.webp"
+                        class="front-img"
+                        alt="Rani Ki Vav">
+
+                    <img src="images/products/Rani Ki vav/white/front.webp"
+                        class="back-img"
+                        alt="Rani Ki Vav">
+
+                </div>
+
+                <div class="related-content">
+
+                    <span>Architecture Collection</span>
+
+                    <h3>RANI KI VAV</h3>
+
+                    <p>₹1,699</p>
+
+                </div>
+
+            </a>
+
+            <!-- CARD 2 -->
+
+            <a href="product.html?id=theyyam" class="related-card">
+
+                <div class="related-image">
+
+                    <img src="images/products/theyyam-back.webp"
+                        class="front-img"
+                        alt="Theyyam">
+
+                    <img src="images/products/theyyam-front.webp"
+                        class="back-img"
+                        alt="Theyyam">
+
+                </div>
+
+                <div class="related-content">
+
+                    <span>Culture Collection</span>
+
+                    <h3>THEYYAM</h3>
+
+                    <p>₹1,699</p>
+
+                </div>
+
+            </a>
+
+            <!-- CARD 3 -->
+
+            <a href="product.html?id=ellora-caves" class="related-card">
+
+                <div class="related-image">
+
+                    <img src="images/products/ellora-back.webp"
+                        class="front-img"
+                        alt="Chand Baori">
+
+                    <img src="images/products/ellora-front.webp"
+                        class="back-img"
+                        alt="Chand Baori">
+
+                </div>
+
+                <div class="related-content">
+
+                    <span>Architecture Collection</span>
+
+                    <h3>ELLORA CAVES</h3>
+
+                    <p>₹1,699</p>
+
+                </div>
+
+            </a>
+
+            <!-- CARD 4 -->
+
+            <a href="product.html?id=kathakali" class="related-card">
+
+                <div class="related-image">
+
+                    <img src="images/products/kathakali-back.webp"
+                        class="front-img"
+                        alt="Mahabalipuram">
+
+                    <img src="images/products/kathakali-front.webp"
+                        class="back-img"
+                        alt="Mahabalipuram">
+
+                </div>
+
+                <div class="related-content">
+
+                    <span>CULTURE COLLECTION</span>
+
+                    <h3>KATHAKALI</h3>
+
+                    <p>₹1,699</p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     GLOBAL FOOTER
+========================================== -->
+
+<div id="globalFooter"></div>
+
+<!-- ==========================================
+     GLOBAL CART
+========================================== -->
+
+<div id="globalCart"></div>
+
+<!-- <script src="js/script.js"></script> -->
+<!-- ==========================================
+     YUGA GLOBAL JAVASCRIPT
+========================================== -->
+
+<script src="data/products.js"></script>
+
+<script src="components/cart-item.js"></script>
+
+<script src="js/components.js"></script>
+
+
+<script>
+
+document.addEventListener(
+    "yugaComponentsLoaded",
+    function () {
+
+        console.log(
+            "YUGA: Global components loaded."
+        );
+
+
+        /* ==========================================
+           PRODUCT PAGE JAVASCRIPT
+        ========================================== */
+
+        const productScript =
+            document.createElement("script");
+
+        productScript.src = "js/product.js";
+
+        productScript.onload = function () {
+
+            console.log(
+                "YUGA: product.js loaded."
+            );
+
+        };
+
+        productScript.onerror = function () {
+
+            console.error(
+                "YUGA: product.js failed to load."
+            );
+
+        };
+
+        document.body.appendChild(
+            productScript
+        );
+
+
+        /* ==========================================
+           GLOBAL CART JAVASCRIPT
+        ========================================== */
+
+        const cartScript =
+            document.createElement("script");
+
+        cartScript.src = "js/cart.js";
+
+        cartScript.onload = function () {
+
+            console.log(
+                "YUGA: cart.js loaded."
+            );
+
+        };
+
+        cartScript.onerror = function () {
+
+            console.error(
+                "YUGA: cart.js failed to load."
+            );
+
+        };
+
+        document.body.appendChild(
+            cartScript
+        );
+
+
+        /* ==========================================
+           GLOBAL WEBSITE JAVASCRIPT
+        ========================================== */
+
+        const siteScript =
+            document.createElement("script");
+
+        siteScript.src = "js/script.js";
+
+        siteScript.onload = function () {
+
+            console.log(
+                "YUGA: script.js loaded."
+            );
+
+        };
+
+        siteScript.onerror = function () {
+
+            console.error(
+                "YUGA: script.js failed to load."
+            );
+
+        };
+
+        document.body.appendChild(
+            siteScript
+        );
+
+    }
+);
+
+</script>
+
+</body>
+</html>

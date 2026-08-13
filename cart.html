@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- META DATA -->
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <title>YUGA | India Reimagined</title> -->
+     <title>Shopping Cart | YUGA WEAR</title>
+
+    <!-- <meta name="description"
+        content="Premium Indian streetwear inspired by architecture, scripts, culture and timeless heritage."> -->
+
+    <meta
+    name="description"
+    content="Discover YUGA, a premium Indian streetwear brand inspired by architecture, art, scripts, and timeless heritage. Modern culture. Contemporary design.">    
+
+    <meta
+    name="keywords"
+    content="YUGA WEAR, Indian streetwear, oversized t-shirts, premium clothing, India reimagined, heritage fashion">
+
+    <meta name="author" content="YUGA WEAR">
+
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0B0B0B">
+
+    <meta property="og:title" content="YUGA | India Reimagined">
+
+    <meta property="og:description" content="Modern Indian streetwear inspired by architecture, art and heritage.">
+
+    <meta property="og:image" content="https://yugawear.com/images/og-image.jpg">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:url" content="https://yugawear.com">
+
+    <meta name="twitter:card"content="summary_large_image">
+
+    <meta name="twitter:title" content="YUGA | India Reimagined">
+
+    <meta name="twitter:description" content="Premium Indian streetwear inspired by heritage.">
+
+    <meta name="twitter:image"content="https://yugawear.com/images/og-image.jpg">
+
+    <!-- LINKS -->
+    <link rel="canonical" href="https://yugawear.com/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="stylesheet" href="css/animations.css">
+
+    <link rel="stylesheet" href="css/product.css">
+
+    <link rel="stylesheet" href="css/cart.css">
+
+    <link rel="icon" type="image/x-icon" href="/images/android-chrome-512x512.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+
+        {
+        "@context":"https://schema.org",
+        "@type":"Organization",
+
+        "name":"YUGA WEAR",
+
+        "url":"https://yugawear.com",
+
+        "logo":"https://yugawear.com/images/logo.jpg",
+
+        "sameAs":[
+            "https://instagram.com/yuga.wear"
+        ]
+
+        }
+
+        </script>
+</head>
+
+<body>
+
+<!-- ===========================
+            NAVBAR
+    ============================= -->
+<div id="globalNavbar"></div>
+
+
+<section class="cart-hero">
+
+    <div class="container">
+
+        <div class="cart-hero-content">
+
+            <h1>Shopping Cart</h1>
+
+            <p>
+
+                Review your order before checkout.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="cart-page">
+
+    <div class="container">
+
+        <div class="cart-layout">
+
+            <!-- LEFT -->
+
+            <div class="cart-products">
+                <div class="cart-list" id="cartPageItems">
+
+                    <!-- Rendered by cart-page.js -->
+
+                </div>
+
+                <div class="continue-shopping">
+
+                    <a href="index.html">
+
+                        ← Continue Shopping
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <aside class="order-summary">
+               <h2>Order Summary</h2>
+
+                <div class="summary-row">
+
+                    <span>Subtotal</span>
+
+                    <strong id="summarySubtotal">
+
+                        ₹0
+
+                    </strong>
+
+                </div>
+
+                <!-- TOTAL SAVINGS -->
+                <div
+                    class="summary-savings"
+                    id="summarySavings">
+
+                    You saved ₹0
+
+                </div>
+
+                <div class="summary-row">
+
+                    <span>Shipping</span>
+
+                    <strong id="summaryShipping">
+
+                        FREE
+
+                    </strong>
+
+                </div>
+
+                <div class="summary-row">
+
+                    <span>Tax</span>
+
+                    <strong id="summaryTax">
+
+                        Included
+
+                    </strong>
+
+                </div>
+
+                <hr>
+
+                <div class="summary-total">
+
+                    <span>Total</span>
+
+                    <strong id="summaryTotal">
+
+                        ₹0
+
+                    </strong>
+
+                </div>
+
+                <button
+                    class="checkout-button"
+                    id="checkoutPageBtn">
+
+                    Secure Checkout →
+
+                </button>
+
+                    <div class="checkout-trust">
+
+                        <div class="trust-item">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <span>Secure Checkout</span>
+
+                        </div>
+
+                        <div class="trust-item">
+
+                            <i class="fa-solid fa-shirt"></i>
+
+                            <span>Premium Quality</span>
+
+                        </div>
+
+                        <div class="trust-item">
+
+                            <i class="fa-solid fa-arrow-rotate-left"></i>
+
+                            <span>Easy Returns</span>
+
+                        </div>
+
+                        <div class="trust-item">
+
+                            <i class="fa-solid fa-truck-fast"></i>
+
+                            <span>Free Ships Across India</span>
+
+                        </div>
+
+                    </div>
+            </aside>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+ <!-- FOOTER -->
+
+    <!-- ==========================================
+                FOOTER
+========================================== -->
+
+<div id="globalFooter"></div>
+
+<!-- cart div -->
+<div id="globalCart"></div>
+
+
+
+<!-- <script src="js/script.js"></script> -->
+<!-- ==========================================
+     YUGA GLOBAL JAVASCRIPT
+========================================== -->
+
+<script src="data/products.js"></script>
+
+<script src="components/cart-item.js"></script>
+
+<script src="js/components.js"></script>
+
+
+<script>
+
+document.addEventListener(
+    "yugaComponentsLoaded",
+    function () {
+
+        console.log(
+            "YUGA: Global components loaded."
+        );
+
+
+        /* ==========================================
+           CART PAGE JAVASCRIPT
+        ========================================== */
+
+        const cartPageScript =
+            document.createElement("script");
+
+        cartPageScript.src = "js/cart-page.js";
+
+        cartPageScript.onload = function () {
+
+            console.log(
+                "YUGA: cart-page.js loaded."
+            );
+
+        };
+
+        cartPageScript.onerror = function () {
+
+            console.error(
+                "YUGA: cart-page.js failed to load."
+            );
+
+        };
+
+        document.body.appendChild(
+            cartPageScript
+        );
+
+
+        /* ==========================================
+           GLOBAL CART DRAWER
+        ========================================== */
+
+        const cartScript =
+            document.createElement("script");
+
+        cartScript.src = "js/cart.js";
+
+        cartScript.onload = function () {
+
+            console.log(
+                "YUGA: cart.js loaded."
+            );
+
+        };
+
+        cartScript.onerror = function () {
+
+            console.error(
+                "YUGA: cart.js failed to load."
+            );
+
+        };
+
+        document.body.appendChild(
+            cartScript
+        );
+
+
+        /* ==========================================
+           GLOBAL WEBSITE SCRIPT
+        ========================================== */
+
+        const siteScript =
+            document.createElement("script");
+
+        siteScript.src = "js/script.js";
+
+        siteScript.onload = function () {
+
+            console.log(
+                "YUGA: script.js loaded."
+            );
+
+        };
+
+        siteScript.onerror = function () {
+
+            console.error(
+                "YUGA: script.js failed to load."
+            );
+
+        };
+
+        document.body.appendChild(
+            siteScript
+        );
+
+    }
+);
+
+</script>
+</body>
+
+</html>

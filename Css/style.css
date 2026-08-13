@@ -128,19 +128,20 @@ ul{
 
 }
 
-.nav-icons{
+.nav-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    display:flex;
+    gap: 14px;
 
-    gap:25px;
-
+    height: 100%;
 }
 
 .nav-icons a{
 
-    color:white;
-
-    font-size:13px;
+    color: #111;
+    text-decoration: none;
 
 }
 
@@ -964,8 +965,7 @@ p{
     transition:.4s;
     display: flex;
     align-items: center;
-            width: 40%;
-
+    width: 40%;
 
 }
 .logo h1{
@@ -1865,4 +1865,243 @@ p{
 
     letter-spacing:4px;
 
+}
+.shop-link:hover{
+    color: #000;
+    font-size: 12px;
+    font-size: 800;
+
+}
+
+/* ==========================================
+   YUGA NAVBAR CART
+========================================== */
+
+.cart-icon {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #111;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    box-shadow: none;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+
+/* Remove browser button effects */
+
+.cart-icon:hover,
+.cart-icon:focus,
+.cart-icon:active {
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+
+/* Subtle hover */
+
+.cart-icon:hover {
+    color: #ff641f;
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================
+   CART ICON
+========================================== */
+
+.cart-icon i {
+    font-size: 19px;
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   CART COUNT
+========================================== */
+
+.cart-count {
+    position: absolute;
+
+    top: 1px;
+    right: 0px;
+
+    min-width: 17px;
+    height: 17px;
+
+    padding: 0 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ff641f;
+    color: #fff;
+
+    border-radius: 50%;
+
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+
+    border: 2px solid #fff;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+/* Hidden state */
+
+.cart-count.hidden {
+    opacity: 0;
+    transform: scale(0);
+    pointer-events: none;
+}
+
+.nav-icons > a:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 500;
+
+    transition: color 0.25s ease;
+}
+
+.nav-icons > a:first-child:hover {
+    color: #ff641f;
+}
+
+
+
+/* =========================================
+   YUGA NAVBAR CART ICON
+========================================= */
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.nav-icons .cart-icon {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+    margin: 0;
+
+    border: 0;
+    outline: none;
+
+    background: transparent;
+
+    color: #111;
+
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    font-size: 22px;
+
+    line-height: 1;
+}
+
+.nav-icons .cart-icon i {
+    font-size: 18px;
+    line-height: 1;
+
+    color: #111;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+.nav-icons .cart-icon:hover i {
+    transform: translateY(-1px);
+    color: #f56600;
+}
+
+/* =========================================
+   CART BADGE
+========================================= */
+
+.nav-icons .cart-count {
+    position: absolute;
+
+    top: -7px;
+    right: -9px;
+
+    min-width: 15px;
+    height: 15px;
+
+    padding: 0 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f56600;
+    color: #fff;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    line-height: 1;
+
+    border: 2px solid #fff;
+
+    pointer-events: none;
+}
+
+.nav-icons .cart-count.hidden {
+    display: none;
 }

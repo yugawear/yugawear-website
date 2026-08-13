@@ -57,11 +57,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="Css/style.css">
-
-    <link rel="stylesheet" href="Css/responsive.css">
-
-    <link rel="stylesheet" href="Css/animations.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/cart.css">
 
     <link rel="icon" href="images/android-chrome-512x512.png" type="image/png">
 
@@ -89,8 +88,6 @@
         }
 
         </script>
-</head>
-
 </head>
 
 <body>
@@ -121,100 +118,10 @@
 
 </div>
 
-    <!-- ===========================
+<!-- ===========================
             NAVBAR
     ============================= -->
-    <header class="header">
-
-    <div class="container nav-container">
-
-        <!-- Logo -->
-        <a href="#" class="logo">
-
-            <img src="images/logo.webp" alt="YUGA">
-
-            <h1>YUGA WEAR</h1>
-
-        </a>
-
-        <!-- Desktop Navigation -->
-        <nav class="nav">
-
-            <ul>
-
-                <li><a href="#">Shop</a></li>
-
-                <li><a href="#">Collections</a></li>
-
-                <li><a href="#">Story</a></li>
-
-                <li><a href="#">About</a></li>
-
-                <li><a href="#">Contact</a></li>
-
-            </ul>
-
-        </nav>
-
-        <!-- Desktop Icons -->
-        <div class="nav-icons">
-
-            <a href="#"><i>IG</i></a>
-
-            <a href="#"><i>BAG</i></a>
-
-        </div>
-
-        <!-- NEW: Mobile Hamburger -->
-
-        <button class="menu-toggle">
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </button>
-
-    </div>
-
-</header>
-
-<!-- NEW: Mobile Menu -->
-
-<div class="mobile-menu">
-
-    <button class="close-menu">
-
-        &times;
-
-    </button>
-
-    <ul>
-
-        <li><a href="#">Shop</a></li>
-
-        <li><a href="#">Collections</a></li>
-
-        <li><a href="#">Story</a></li>
-
-        <li><a href="#">About</a></li>
-
-        <li><a href="#">Contact</a></li>
-
-        <li><a href="#">Join Community</a></li>
-
-    </ul>
-
-    <div class="mobile-social">
-
-        <a href="#">Instagram</a>
-
-        <a href="#">Email</a>
-
-    </div>
-
-</div>
-
+<div id="globalNavbar"></div>
 
     <!-- ===========================
             HERO
@@ -244,7 +151,7 @@
 
                 <div class="hero-buttons">
 
-                    <a href="#" class="btn btn-primary">
+                    <a href="#shop" class="btn btn-primary">
 
                         SHOP DROP 01
 
@@ -330,7 +237,7 @@
             COLLECTIONS
     ============================= -->
 
-    <section class="collections">
+    <section class="collections" id="collections">
 
         <div class="container">
 
@@ -350,7 +257,7 @@
 
                     <img src="images/arts.webp"loading="lazy">
 
-                    <h3>Arts</h3>
+                    <h3>Arts & Craft</h3>
 
                 </div>
 
@@ -358,7 +265,7 @@
 
                     <img src="images/Motifs.webp"loading="lazy">
 
-                    <h3>Motifs</h3>
+                    <h3>Symbols & Motifs</h3>
 
                 </div>
 
@@ -372,7 +279,7 @@
 
     <!-- STORY -->
 
-    <section class="story">
+    <section class="story" id="story">
 
         <div class="container story-grid">
 
@@ -395,7 +302,7 @@
 
                 </p>
 
-                <a href="#" class="btn btn-secondary">
+                <a href="about.html" class="btn btn-secondary">
 
                     READ STORY
 
@@ -432,7 +339,7 @@
                 <h2>DROP 01</h2>
             </div>
 
-            <a href="#" class="view-all-link">
+            <a href="collections.html" class="view-all-link">
                 VIEW ALL →
             </a>
 
@@ -446,9 +353,9 @@
                     PRODUCT 01
             ========================== -->
 
-            <article class="product-card reveal">
+            <article class="product-card">
 
-                <a href="#" class="product-image">
+                <a href="product.html?id=rani-ki-vav" class="product-image">
 
                     <span class="product-badge">
                         DROP 01
@@ -493,7 +400,7 @@
                         <span class="price">
                             ₹1,699/-
                         </span>
-                        <a href="#" class="shop-link">
+                        <a href="product.html?id=rani-ki-vav" class="shop-link">
 
                             SHOP NOW →
 
@@ -515,7 +422,7 @@
 
             <article class="product-card">
 
-                <a href="#" class="product-image">
+                <a href="product.html?id=kathakali" class="product-image">
 
                     <span class="product-badge">
 
@@ -562,7 +469,7 @@
                         <span class="price">
                             ₹1,699/-
                         </span>
-                        <a href="#" class="shop-link">
+                        <a href="product.html?id=kathakali" class="shop-link">
 
                             SHOP NOW →
 
@@ -584,7 +491,7 @@
 
             <article class="product-card">
 
-                <a href="#" class="product-image">
+                <a href="product.html?id=ellora-caves" class="product-image">
 
                     <span class="product-badge">
 
@@ -631,7 +538,7 @@
                         <span class="price">
                             ₹1,699/-
                         </span>
-                        <a href="#" class="shop-link">
+                        <a href="product.html?id=ellora-caves" class="shop-link">
 
                             SHOP NOW →
 
@@ -651,7 +558,7 @@
 
             <article class="product-card">
 
-                <a href="#" class="product-image">
+                <a href="product.html?id=theyyam" class="product-image">
 
                     <span class="product-badge">
 
@@ -697,7 +604,7 @@
                             ₹1,699/-
                         </span>
 
-                        <a href="#" class="shop-link">
+                        <a href="product.html?id=theyyam" class="shop-link">
 
                             SHOP NOW →
 
@@ -920,142 +827,97 @@
 
 </section>
 
-    <!-- FOOTER -->
+<!-- FOOTER -->
 
     <!-- ==========================================
                 FOOTER
 ========================================== -->
 
-<footer class="footer">
+<div id="globalFooter"></div>
 
-    <div class="container">
+<!-- cart div -->
+<div id="globalCart"></div>
 
-        <div class="footer-top">
 
-            <img
-                src="images/logo.webp"
-                alt="YUGA WEAR Logo"
-                class="footer-logo"
-                loading="lazy">
 
-            <h2>INDIA REIMAGINED</h2>
+<script src="data/products.js"></script>
 
-            <p>
+<script src="components/cart-item.js"></script>
 
-                YUGA WEAR is a culture-first streetwear brand inspired by
-                India's architecture, art, scripts and timeless heritage.
+<script src="js/components.js"></script>
 
-            </p>
+<script>
+document.addEventListener(
+    "yugaComponentsLoaded",
+    function () {
 
-        </div>
+        console.log(
+            "YUGA: Starting global JavaScript..."
+        );
 
 
-        <div class="footer-grid">
+        /* ==========================================
+           GLOBAL CART
+        ========================================== */
 
-            <div>
+        const cartScript =
+            document.createElement("script");
 
-                <h4>SHOP</h4>
+        cartScript.src = "js/cart.js";
 
-                <ul>
+        cartScript.onload = function () {
 
-                    <li><a href="#">All Products</a></li>
+            console.log(
+                "YUGA: cart.js loaded"
+            );
 
-                    <li><a href="#">Drop 01</a></li>
+        };
 
-                    <li><a href="#">Collections</a></li>
+        cartScript.onerror = function () {
 
-                    <li><a href="#">New Arrivals</a></li>
+            console.error(
+                "YUGA: cart.js failed to load"
+            );
 
-                </ul>
+        };
 
-            </div>
+        document.body.appendChild(
+            cartScript
+        );
 
 
+        /* ==========================================
+           GLOBAL WEBSITE SCRIPT
+        ========================================== */
 
-            <div>
+        const siteScript =
+            document.createElement("script");
 
-                <h4>COMPANY</h4>
+        siteScript.src = "js/script.js";
 
-                <ul>
+        siteScript.onload = function () {
 
-                    <li><a href="#">About</a></li>
+            console.log(
+                "YUGA: script.js loaded"
+            );
 
-                    <li><a href="#">Our Story</a></li>
+        };
 
-                    <li><a href="#">Journal</a></li>
+        siteScript.onerror = function () {
 
-                    <li><a href="#">Contact</a></li>
+            console.error(
+                "YUGA: script.js failed to load"
+            );
 
-                </ul>
+        };
 
-            </div>
+        document.body.appendChild(
+            siteScript
+        );
 
-
-
-            <div>
-
-                <h4>HELP</h4>
-
-                <ul>
-
-                    <li><a href="#">Shipping</a></li>
-
-                    <li><a href="#">Returns</a></li>
-
-                    <li><a href="#">Size Guide</a></li>
-
-                    <li><a href="#">FAQ</a></li>
-
-                </ul>
-
-            </div>
-
-
-
-            <div>
-
-                <h4>FOLLOW</h4>
-
-                <ul>
-
-                    <li><a href="#">Instagram</a></li>
-
-                    <li><a href="#">Email</a></li>
-
-                    <li><a href="#">YouTube</a></li>
-
-                    <li><a href="#">Pinterest</a></li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-
-        <div class="footer-bottom">
-
-            <p>
-
-                © 2026 YUGA WEAR. All rights reserved.
-
-            </p>
-
-            <span>
-
-                Ancient Roots. Future Identity.
-
-            </span>
-
-        </div>
-
-    </div>
-
-</footer>
-
-
-
-<script src="js/script.js"></script>
+    }
+);
+</script>
 
 </body>
 

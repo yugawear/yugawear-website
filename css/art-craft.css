@@ -1,0 +1,1581 @@
+/* =========================================================
+   YUGA WEAR
+   ART & CRAFT SERIES
+========================================================= */
+
+:root {
+
+    --artcraft-black: #101010;
+
+    --artcraft-white: #ffffff;
+
+    --artcraft-offwhite: #f7f5f1;
+
+    --artcraft-text: #171717;
+
+    --artcraft-muted: #707070;
+
+    --artcraft-border: #e5e3df;
+
+    --artcraft-orange: #ff5a00;
+
+    --artcraft-orange-dark: #e64f00;
+
+    --artcraft-radius: 14px;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.artcraft-container {
+
+    width: min(
+        calc(100% - 80px),
+        1180px
+    );
+
+    margin: 0 auto;
+
+}
+
+
+.artcraft-hero *,
+.artcraft-intro *,
+.artcraft-products *,
+.artcraft-philosophy *,
+.artcraft-next * {
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.artcraft-hero {
+
+    position: relative;
+
+    min-height: 720px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            #111111 0%,
+            #111111 35%,
+            #211c19 65%,
+            #111111 100%
+        );
+
+}
+
+
+.artcraft-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(255, 90, 0, .12),
+            transparent 35%
+        );
+
+}
+
+
+.artcraft-hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.9),
+            rgba(0,0,0,.4),
+            rgba(0,0,0,.8)
+        );
+
+}
+
+
+.artcraft-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(
+        calc(100% - 80px),
+        1180px
+    );
+
+    margin:
+        0 auto
+        105px;
+
+}
+
+
+.artcraft-eyebrow {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 28px;
+
+    color:
+        var(--artcraft-orange);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+}
+
+
+.artcraft-eyebrow::before {
+
+    content: "";
+
+    width: 32px;
+
+    height: 1px;
+
+    background:
+        var(--artcraft-orange);
+
+}
+
+
+.artcraft-hero h1 {
+
+    max-width: 900px;
+
+    margin: 0;
+
+    color: white;
+
+    font-size: clamp(
+        62px,
+        9vw,
+        128px
+    );
+
+    font-weight: 800;
+
+    line-height: .86;
+
+    letter-spacing: -6px;
+
+}
+
+
+.artcraft-hero h1 span {
+
+    display: block;
+
+    color:
+        var(--artcraft-orange);
+
+}
+
+
+.artcraft-hero-content > p {
+
+    max-width: 520px;
+
+    margin:
+        35px 0
+        35px;
+
+    color: #c1c1c1;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+}
+
+
+.artcraft-hero-meta {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: #aaa;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.meta-line {
+
+    width: 50px;
+
+    height: 1px;
+
+    background: #555;
+
+}
+
+
+.artcraft-scroll {
+
+    position: absolute;
+
+    right: 45px;
+
+    bottom: 45px;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #aaa;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    writing-mode: vertical-rl;
+
+}
+
+
+.artcraft-scroll i {
+
+    color:
+        var(--artcraft-orange);
+
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.artcraft-intro {
+
+    padding:
+        130px
+        0;
+
+    background:
+        var(--artcraft-offwhite);
+
+}
+
+
+.artcraft-intro .artcraft-container {
+
+    display: grid;
+
+    grid-template-columns:
+        180px
+        1fr;
+
+    gap: 70px;
+
+}
+
+
+.intro-number {
+
+    color:
+        var(--artcraft-orange);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.artcraft-label {
+
+    display: block;
+
+    margin-bottom: 20px;
+
+    color:
+        var(--artcraft-orange);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+}
+
+
+.intro-content h2 {
+
+    max-width: 850px;
+
+    margin:
+        0 0 35px;
+
+    color:
+        var(--artcraft-text);
+
+    font-size: clamp(
+        50px,
+        7vw,
+        90px
+    );
+
+    line-height: .92;
+
+    letter-spacing: -4px;
+
+}
+
+
+.intro-content h2 span {
+
+    color:
+        var(--artcraft-orange);
+
+}
+
+
+.intro-content p {
+
+    max-width: 650px;
+
+    margin:
+        0 0 18px;
+
+    color:
+        var(--artcraft-muted);
+
+    font-size: 16px;
+
+    line-height: 1.85;
+
+}
+
+
+.intro-statement {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 45px;
+
+}
+
+
+.intro-statement span {
+
+    padding:
+        11px
+        16px;
+
+    border:
+        1px solid
+        var(--artcraft-border);
+
+    color:
+        var(--artcraft-text);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+.artcraft-products {
+
+    padding:
+        120px
+        0
+        130px;
+
+    background:
+        var(--artcraft-white);
+
+}
+
+
+.products-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 50px;
+
+    margin-bottom: 65px;
+
+}
+
+
+.products-header h2 {
+
+    margin: 0;
+
+    color:
+        var(--artcraft-text);
+
+    font-size: 50px;
+
+    line-height: 1;
+
+    letter-spacing: -2.5px;
+
+}
+
+
+.products-header > p {
+
+    max-width: 300px;
+
+    margin: 0;
+
+    color:
+        var(--artcraft-muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.artcraft-product {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.35fr)
+        minmax(350px, .65fr);
+
+    min-height: 610px;
+
+    margin-bottom: 25px;
+
+    overflow: hidden;
+
+    background:
+        var(--artcraft-offwhite);
+
+    border:
+        1px solid
+        var(--artcraft-border);
+
+    border-radius:
+        var(--artcraft-radius);
+
+}
+
+
+.artcraft-product-image {
+
+    position: relative;
+
+    min-height: 610px;
+
+    overflow: hidden;
+
+    display: block;
+
+    background: #ddd;
+
+}
+
+
+.artcraft-product-image img {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        opacity .6s ease,
+        transform .8s cubic-bezier(.2,.7,.2,1);
+
+}
+
+
+.artcraft-image-back {
+
+    opacity: 1;
+
+}
+
+
+.artcraft-image-front {
+
+    opacity: 0;
+
+}
+
+
+.artcraft-product-image:hover
+.artcraft-image-back {
+
+    opacity: 0;
+
+}
+
+
+.artcraft-product-image:hover
+.artcraft-image-front {
+
+    opacity: 1;
+
+}
+
+
+.artcraft-product-image:hover img {
+
+    transform:
+        scale(1.025);
+
+}
+
+
+/* =========================================================
+   PRODUCT BADGE
+========================================================= */
+
+.collection-product-badge {
+
+    position: absolute;
+
+    top: 25px;
+
+    left: 25px;
+
+    z-index: 5;
+
+    padding:
+        10px
+        15px;
+
+    background:
+        var(--artcraft-black);
+
+    color: white;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.collection-product-badge.limited {
+
+    background:
+        var(--artcraft-orange);
+
+}
+
+
+/* =========================================================
+   IMAGE HOVER LABEL
+========================================================= */
+
+.image-hover-label {
+
+    position: absolute;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        12px
+        16px;
+
+    background:
+        rgba(255,255,255,.95);
+
+    color:
+        var(--artcraft-black);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    opacity: 0;
+
+    transform:
+        translateY(8px);
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+
+}
+
+
+.artcraft-product-image:hover
+.image-hover-label {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.image-hover-label i {
+
+    color:
+        var(--artcraft-orange);
+
+}
+
+
+/* =========================================================
+   PRODUCT INFORMATION
+========================================================= */
+
+.artcraft-product-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding:
+        60px
+        50px
+        45px;
+
+}
+
+
+.product-index {
+
+    margin-bottom: 60px;
+
+    color: #aaa;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.artcraft-product-category {
+
+    display: block;
+
+    margin-bottom: 18px;
+
+    color:
+        var(--artcraft-orange);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+}
+
+
+.artcraft-product-info h3 {
+
+    margin: 0;
+
+    color:
+        var(--artcraft-text);
+
+    font-size: 38px;
+
+    line-height: .98;
+
+    letter-spacing: -1.7px;
+
+}
+
+
+.artcraft-product-info h3 span {
+
+    display: block;
+
+}
+
+
+.artcraft-location {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 22px;
+
+    color: #777;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+}
+
+
+.artcraft-location i {
+
+    color:
+        var(--artcraft-orange);
+
+}
+
+
+.artcraft-product-info > p {
+
+    max-width: 430px;
+
+    margin:
+        35px 0
+        30px;
+
+    color:
+        var(--artcraft-muted);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   PRODUCT BOTTOM
+========================================================= */
+
+.artcraft-product-bottom {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-top: auto;
+
+    padding-top: 30px;
+
+    border-top:
+        1px solid
+        var(--artcraft-border);
+
+}
+
+
+.artcraft-price {
+
+    color:
+        var(--artcraft-text);
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    letter-spacing: -.8px;
+
+}
+
+
+.artcraft-shop-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color:
+        var(--artcraft-orange);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+
+}
+
+
+.artcraft-shop-link span {
+
+    transition:
+        transform .25s ease;
+
+}
+
+
+.artcraft-shop-link:hover span {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* =========================================================
+   SECOND PRODUCT
+========================================================= */
+
+.product-theyyam {
+
+    grid-template-columns:
+        minmax(350px, .65fr)
+        minmax(0, 1.35fr);
+
+}
+
+
+.product-theyyam
+.artcraft-product-info {
+
+    order: -1;
+
+}
+
+
+.product-theyyam
+.artcraft-product-image {
+
+    order: 2;
+
+}
+
+
+/* =========================================================
+   PHILOSOPHY
+========================================================= */
+
+.artcraft-philosophy {
+
+    padding:
+        130px
+        0;
+
+    background:
+        var(--artcraft-black);
+
+}
+
+
+.philosophy-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        200px
+        1fr;
+
+    gap: 80px;
+
+}
+
+
+.philosophy-label span {
+
+    color:
+        var(--artcraft-orange);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.philosophy-content h2 {
+
+    max-width: 850px;
+
+    margin:
+        0 0 25px;
+
+    color: white;
+
+    font-size: clamp(
+        50px,
+        7vw,
+        90px
+    );
+
+    line-height: .9;
+
+    letter-spacing: -4px;
+
+}
+
+
+.philosophy-content h2 span {
+
+    color:
+        var(--artcraft-orange);
+
+}
+
+
+.philosophy-content > p {
+
+    margin: 0;
+
+    color: #999;
+
+    font-size: 17px;
+
+}
+
+
+.philosophy-line {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 18px;
+
+    margin-top: 50px;
+
+}
+
+
+.philosophy-line span {
+
+    width: 45px;
+
+    height: 1px;
+
+    background:
+        var(--artcraft-orange);
+
+}
+
+
+.philosophy-line strong {
+
+    color: white;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =========================================================
+   NEXT NAVIGATION
+========================================================= */
+
+.artcraft-next {
+
+    padding:
+        35px
+        0;
+
+    background:
+        var(--artcraft-black);
+
+    border-top:
+        1px solid #292929;
+
+}
+
+
+.artcraft-next
+.artcraft-container {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+}
+
+
+.back-collections,
+.explore-drop {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #aaa;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+
+    transition:
+        color .25s ease;
+
+}
+
+
+.back-collections:hover {
+
+    color: white;
+
+}
+
+
+.explore-drop {
+
+    color:
+        var(--artcraft-orange);
+
+}
+
+
+.explore-drop span,
+.back-collections span {
+
+    transition:
+        transform .25s ease;
+
+}
+
+
+.explore-drop:hover span {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .artcraft-container,
+    .artcraft-hero-content {
+
+        width:
+            calc(100% - 50px);
+
+    }
+
+
+    .artcraft-product {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .artcraft-product-image {
+
+        min-height:
+            550px;
+
+    }
+
+
+    .product-theyyam
+    .artcraft-product-info {
+
+        order: 1;
+
+    }
+
+
+    .product-theyyam
+    .artcraft-product-image {
+
+        order: 2;
+
+    }
+
+
+    .artcraft-product-info {
+
+        min-height:
+            450px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .artcraft-container,
+    .artcraft-hero-content {
+
+        width:
+            calc(100% - 32px);
+
+    }
+
+
+    .artcraft-hero {
+
+        min-height:
+            650px;
+
+    }
+
+
+    .artcraft-hero-content {
+
+        margin-bottom:
+            80px;
+
+    }
+
+
+    .artcraft-hero h1 {
+
+        font-size:
+            56px;
+
+        letter-spacing:
+            -3px;
+
+    }
+
+
+    .artcraft-hero-content > p {
+
+        font-size:
+            14px;
+
+    }
+
+
+    .artcraft-scroll {
+
+        display:
+            none;
+
+    }
+
+
+    .artcraft-intro {
+
+        padding:
+            80px
+            0;
+
+    }
+
+
+    .artcraft-intro
+    .artcraft-container {
+
+        display:
+            block;
+
+    }
+
+
+    .intro-number {
+
+        margin-bottom:
+            35px;
+
+    }
+
+
+    .intro-content h2 {
+
+        font-size:
+            52px;
+
+        letter-spacing:
+            -3px;
+
+    }
+
+
+    .intro-content p {
+
+        font-size:
+            14px;
+
+    }
+
+
+    .artcraft-products {
+
+        padding:
+            80px
+            0;
+
+    }
+
+
+    .products-header {
+
+        display:
+            block;
+
+        margin-bottom:
+            40px;
+
+    }
+
+
+    .products-header h2 {
+
+        font-size:
+            40px;
+
+    }
+
+
+    .products-header > p {
+
+        margin-top:
+            20px;
+
+    }
+
+
+    .artcraft-product {
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        margin-bottom:
+            18px;
+
+        border-radius:
+            10px;
+
+    }
+
+
+    .artcraft-product-image {
+
+        min-height:
+            470px;
+
+    }
+
+
+    .product-theyyam
+    .artcraft-product-image {
+
+        order:
+            1;
+
+    }
+
+
+    .product-theyyam
+    .artcraft-product-info {
+
+        order:
+            2;
+
+    }
+
+
+    .artcraft-product-info {
+
+        min-height:
+            430px;
+
+        padding:
+            35px
+            25px
+            30px;
+
+    }
+
+
+    .product-index {
+
+        margin-bottom:
+            35px;
+
+    }
+
+
+    .artcraft-product-info h3 {
+
+        font-size:
+            32px;
+
+    }
+
+
+    .artcraft-product-info > p {
+
+        font-size:
+            13px;
+
+    }
+
+
+    .artcraft-product-bottom {
+
+        padding-top:
+            25px;
+
+    }
+
+
+    .artcraft-price {
+
+        font-size:
+            22px;
+
+    }
+
+
+    .artcraft-shop-link {
+
+        font-size:
+            8px;
+
+    }
+
+
+    .image-hover-label {
+
+        opacity:
+            1;
+
+        transform:
+            none;
+
+        right:
+            15px;
+
+        bottom:
+            15px;
+
+    }
+
+
+    .artcraft-philosophy {
+
+        padding:
+            85px
+            0;
+
+    }
+
+
+    .philosophy-grid {
+
+        display:
+            block;
+
+    }
+
+
+    .philosophy-label {
+
+        margin-bottom:
+            35px;
+
+    }
+
+
+    .philosophy-content h2 {
+
+        font-size:
+            51px;
+
+        letter-spacing:
+            -3px;
+
+    }
+
+
+    .philosophy-content > p {
+
+        font-size:
+            14px;
+
+        line-height:
+            1.7;
+
+    }
+
+
+    .artcraft-next
+    .artcraft-container {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .artcraft-hero h1 {
+
+        font-size:
+            48px;
+
+    }
+
+
+    .artcraft-product-image {
+
+        min-height:
+            410px;
+
+    }
+
+
+    .artcraft-product-info h3 {
+
+        font-size:
+            29px;
+
+    }
+
+
+    .artcraft-product-bottom {
+
+        align-items:
+            center;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .artcraft-product-image img,
+    .image-hover-label,
+    .artcraft-shop-link span,
+    .explore-drop span {
+
+        transition:
+            none;
+
+    }
+
+}

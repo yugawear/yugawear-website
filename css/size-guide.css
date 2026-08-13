@@ -1,0 +1,1720 @@
+/* =========================================================
+   YUGA WEAR
+   PREMIUM SIZE GUIDE
+========================================================= */
+
+:root {
+
+    --yuga-black: #111111;
+    --yuga-black-soft: #181818;
+
+    --yuga-white: #ffffff;
+    --yuga-off-white: #fafafa;
+    --yuga-soft: #f5f5f5;
+
+    --yuga-border: #e5e5e5;
+    --yuga-border-dark: #2b2b2b;
+
+    --yuga-text: #292929;
+    --yuga-muted: #707070;
+
+    --yuga-orange: #ff5a00;
+    --yuga-orange-dark: #e84f00;
+
+    --yuga-green: #23804e;
+
+    --yuga-radius: 16px;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.yuga-size-guide *,
+.yuga-size-guide *::before,
+.yuga-size-guide *::after {
+
+    box-sizing: border-box;
+
+}
+
+
+.yuga-size-guide {
+
+    width: 100%;
+
+    padding:
+        90px
+        0
+        110px;
+
+    background: var(--yuga-white);
+
+    color: var(--yuga-text);
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+}
+
+
+.size-guide-container {
+
+    width: min(
+        calc(100% - 80px),
+        1180px
+    );
+
+    margin: 0 auto;
+
+}
+
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.size-guide-header {
+
+    margin-bottom: 70px;
+
+}
+
+
+.size-guide-eyebrow {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 22px;
+
+    color: var(--yuga-orange);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+}
+
+
+.size-guide-eyebrow::before {
+
+    content: "";
+
+    width: 28px;
+
+    height: 1px;
+
+    background: var(--yuga-orange);
+
+}
+
+
+.size-guide-title-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 40px;
+
+}
+
+
+.size-guide-header h1 {
+
+    margin: 0;
+
+    color: var(--yuga-black);
+
+    font-size: clamp(
+        52px,
+        7vw,
+        88px
+    );
+
+    font-weight: 800;
+
+    line-height: .92;
+
+    letter-spacing: -4px;
+
+}
+
+
+.size-guide-header p {
+
+    margin: 18px 0 0;
+
+    color: var(--yuga-muted);
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+}
+
+
+.fit-badge {
+
+    flex-shrink: 0;
+
+    padding: 17px 21px;
+
+    color: var(--yuga-black);
+
+    border: 1px solid var(--yuga-border);
+
+    border-radius: 50px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    line-height: 1.5;
+
+    letter-spacing: 1.5px;
+
+    text-align: left;
+
+}
+
+
+.fit-badge-dot {
+
+    display: inline-block;
+
+    width: 7px;
+
+    height: 7px;
+
+    margin-right: 6px;
+
+    border-radius: 50%;
+
+    background: var(--yuga-orange);
+
+}
+
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.section-heading > div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+}
+
+
+.section-number {
+
+    color: var(--yuga-orange);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+.section-heading h2 {
+
+    margin: 0;
+
+    color: var(--yuga-black);
+
+    font-size: 25px;
+
+    font-weight: 750;
+
+    letter-spacing: -.7px;
+
+}
+
+
+.measurement-unit {
+
+    color: #999;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: .8px;
+
+    text-transform: uppercase;
+
+}
+
+
+
+/* =========================================================
+   SIZE CHART
+========================================================= */
+
+.size-chart-section {
+
+    margin-bottom: 100px;
+
+}
+
+
+.size-table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    background: var(--yuga-white);
+
+    border: 1px solid var(--yuga-border);
+
+    border-radius: var(--yuga-radius);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, .055);
+
+}
+
+
+.size-table {
+
+    width: 100%;
+
+    min-width: 650px;
+
+    border-collapse: collapse;
+
+}
+
+
+.size-table th,
+.size-table td {
+
+    height: 68px;
+
+    padding: 0 22px;
+
+    border-bottom:
+        1px solid var(--yuga-border);
+
+    text-align: center;
+
+    font-size: 14px;
+
+}
+
+
+.size-table tr:last-child th,
+.size-table tr:last-child td {
+
+    border-bottom: none;
+
+}
+
+
+.size-table thead th {
+
+    height: 58px;
+
+    background: #fcfcfc;
+
+    color: #777;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+
+}
+
+
+.size-table thead th:first-child {
+
+    text-align: left;
+
+}
+
+
+.size-table tbody th {
+
+    width: 180px;
+
+    color: #333;
+
+    font-weight: 700;
+
+    text-align: left;
+
+}
+
+
+.size-table tbody td {
+
+    color: #333;
+
+    font-weight: 600;
+
+}
+
+
+.size-table tbody tr:hover {
+
+    background: #fffaf6;
+
+}
+
+
+.size-table tbody td:first-of-type {
+
+    color: var(--yuga-orange);
+
+}
+
+
+
+/* =========================================================
+   MEASUREMENT NOTE
+========================================================= */
+
+.measurement-note {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    margin-top: 14px;
+
+    padding: 20px 22px;
+
+    background: #fff8f3;
+
+    border: 1px solid #ffe5d6;
+
+    border-radius: 12px;
+
+}
+
+
+.measurement-note-icon {
+
+    width: 36px;
+
+    height: 36px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--yuga-orange);
+
+    color: white;
+
+    font-size: 13px;
+
+}
+
+
+.measurement-note strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #333;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+}
+
+
+.measurement-note p {
+
+    margin: 0;
+
+    color: #6c6c6c;
+
+    font-size: 12px;
+
+    line-height: 1.65;
+
+}
+
+
+
+/* =========================================================
+   HOW TO MEASURE
+========================================================= */
+
+.how-to-section {
+
+    margin-bottom: 100px;
+
+}
+
+
+.how-to-intro {
+
+    max-width: 680px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.how-to-intro p {
+
+    margin: 0;
+
+    color: #555;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+}
+
+
+.measurement-guide-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 1px;
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--yuga-border);
+
+    border-radius: var(--yuga-radius);
+
+    background: var(--yuga-border);
+
+}
+
+
+.measurement-step {
+
+    min-height: 245px;
+
+    padding: 28px;
+
+    background: var(--yuga-white);
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+
+}
+
+
+.measurement-step:hover {
+
+    position: relative;
+
+    z-index: 1;
+
+    background: #fffaf6;
+
+    transform: translateY(-4px);
+
+}
+
+
+.step-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 45px;
+
+}
+
+
+.step-number {
+
+    color: var(--yuga-orange);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+.step-top i {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--yuga-soft);
+
+    color: #333;
+
+    font-size: 15px;
+
+}
+
+
+.measurement-step h3 {
+
+    margin: 0 0 10px;
+
+    color: var(--yuga-black);
+
+    font-size: 18px;
+
+    letter-spacing: -.3px;
+
+}
+
+
+.measurement-step p {
+
+    margin: 0;
+
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.75;
+
+}
+
+
+
+/* =========================================================
+   VISUAL MEASUREMENT
+========================================================= */
+
+.visual-measure-section {
+
+    margin-bottom: 100px;
+
+}
+
+
+.visual-measure-card {
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr .9fr;
+
+    min-height: 510px;
+
+    overflow: hidden;
+
+    border-radius: var(--yuga-radius);
+
+    background: var(--yuga-black);
+
+}
+
+
+.tshirt-diagram {
+
+    min-height: 510px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 35px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #252525 0%,
+            #111111 62%
+        );
+
+}
+
+
+.tshirt-diagram svg {
+
+    width: 100%;
+
+    max-width: 570px;
+
+    height: auto;
+
+    overflow: visible;
+
+}
+
+
+.shirt-outline {
+
+    fill: #f5f5f5;
+
+    stroke: #ffffff;
+
+    stroke-width: 3;
+
+    stroke-linejoin: round;
+
+}
+
+
+.collar-line {
+
+    fill: none;
+
+    stroke: #bdbdbd;
+
+    stroke-width: 4;
+
+    stroke-linecap: round;
+
+}
+
+
+.measure-line {
+
+    stroke: var(--yuga-orange);
+
+    stroke-width: 3;
+
+    stroke-dasharray: 7 6;
+
+}
+
+
+.measure-tick {
+
+    stroke: var(--yuga-orange);
+
+    stroke-width: 3;
+
+    stroke-linecap: round;
+
+}
+
+
+.label-bg {
+
+    fill: var(--yuga-orange);
+
+}
+
+
+.measure-label {
+
+    fill: white;
+
+    font-family: Inter, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+.diagram-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 60px;
+
+    background: var(--yuga-black);
+
+}
+
+
+.diagram-content > span {
+
+    margin-bottom: 18px;
+
+    color: var(--yuga-orange);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.diagram-content h3 {
+
+    max-width: 390px;
+
+    margin: 0 0 20px;
+
+    color: white;
+
+    font-size: 37px;
+
+    line-height: 1.08;
+
+    letter-spacing: -1.4px;
+
+}
+
+
+.diagram-content > p {
+
+    max-width: 430px;
+
+    margin: 0 0 35px;
+
+    color: #999;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+}
+
+
+.diagram-measure-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+.diagram-measure-list > div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 14px;
+
+    border: 1px solid #292929;
+
+    background: #151515;
+
+}
+
+
+.diagram-number {
+
+    width: 31px;
+
+    height: 31px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--yuga-orange);
+
+    color: white;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+}
+
+
+.diagram-measure-list strong {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: white;
+
+    font-size: 12px;
+
+}
+
+
+.diagram-measure-list small {
+
+    color: #777;
+
+    font-size: 10px;
+
+}
+
+
+
+/* =========================================================
+   FIT GUIDE
+========================================================= */
+
+.fit-section {
+
+    margin-bottom: 75px;
+
+}
+
+
+.fit-guide-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 14px;
+
+}
+
+
+.fit-main-card {
+
+    min-height: 360px;
+
+    padding: 42px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    background: var(--yuga-black);
+
+    border-radius: var(--yuga-radius);
+
+}
+
+
+.fit-main-label {
+
+    margin-bottom: auto;
+
+    color: var(--yuga-orange);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.fit-main-card h3 {
+
+    margin: 0 0 17px;
+
+    color: white;
+
+    font-size: 46px;
+
+    line-height: .98;
+
+    letter-spacing: -2px;
+
+}
+
+
+.fit-main-card p {
+
+    max-width: 430px;
+
+    margin: 0;
+
+    color: #999;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+
+}
+
+
+.fit-advice-card {
+
+    min-height: 360px;
+
+    padding: 42px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background: #fff8f3;
+
+    border:
+        1px solid #ffe3d1;
+
+    border-radius: var(--yuga-radius);
+
+}
+
+
+.fit-advice-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 30px;
+
+    border-radius: 50%;
+
+    background: var(--yuga-orange);
+
+    color: white;
+
+}
+
+
+.fit-advice-card > span {
+
+    margin-bottom: 10px;
+
+    color: var(--yuga-orange);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+
+}
+
+
+.fit-advice-card h3 {
+
+    max-width: 400px;
+
+    margin: 0 0 15px;
+
+    color: #222;
+
+    font-size: 29px;
+
+    line-height: 1.1;
+
+    letter-spacing: -.8px;
+
+}
+
+
+.fit-advice-card p {
+
+    max-width: 430px;
+
+    margin: 0;
+
+    color: #666;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+
+}
+
+
+
+/* =========================================================
+   IMPORTANT NOTE
+========================================================= */
+
+.size-important {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    margin-bottom: 70px;
+
+    padding: 30px;
+
+    border:
+        1px solid var(--yuga-border);
+
+    border-left:
+        4px solid var(--yuga-orange);
+
+    background: var(--yuga-soft);
+
+    border-radius: 10px;
+
+}
+
+
+.important-icon {
+
+    width: 38px;
+
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--yuga-orange);
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+}
+
+
+.size-important span {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--yuga-orange);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.size-important h3 {
+
+    margin: 0 0 8px;
+
+    color: #222;
+
+    font-size: 18px;
+
+}
+
+
+.size-important p {
+
+    max-width: 650px;
+
+    margin: 0;
+
+    color: #666;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* =========================================================
+   SIZE HELP
+========================================================= */
+
+.size-help {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    padding: 50px;
+
+    background: var(--yuga-black);
+
+    border-radius: var(--yuga-radius);
+
+}
+
+
+.size-help-content > span {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--yuga-orange);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.size-help-content h2 {
+
+    max-width: 500px;
+
+    margin: 0 0 13px;
+
+    color: white;
+
+    font-size: 38px;
+
+    line-height: 1.05;
+
+    letter-spacing: -1.3px;
+
+}
+
+
+.size-help-content p {
+
+    max-width: 590px;
+
+    margin: 0;
+
+    color: #999;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+
+}
+
+
+.size-help-button {
+
+    min-width: 165px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    padding: 16px 22px;
+
+    flex-shrink: 0;
+
+    background: var(--yuga-orange);
+
+    color: white;
+
+    border-radius: 6px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    text-decoration: none;
+
+    transition:
+        background .25s ease,
+        transform .25s ease;
+
+}
+
+
+.size-help-button:hover {
+
+    background: var(--yuga-orange-dark);
+
+    transform: translateY(-3px);
+
+}
+
+
+.size-help-button i {
+
+    transition:
+        transform .25s ease;
+
+}
+
+
+.size-help-button:hover i {
+
+    transform: translateX(4px);
+
+}
+
+
+
+/* =========================================================
+   FOOTER NOTE
+========================================================= */
+
+.size-guide-footer-note {
+
+    padding-top: 35px;
+
+    text-align: center;
+
+}
+
+
+.size-guide-footer-note span {
+
+    color: #bbb;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.size-guide-footer-note p {
+
+    margin: 8px 0 0;
+
+    color: #aaa;
+
+    font-size: 11px;
+
+}
+
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .size-guide-container {
+
+        width: min(
+            calc(100% - 50px),
+            900px
+        );
+
+    }
+
+
+    .measurement-guide-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .visual-measure-card {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .tshirt-diagram {
+
+        min-height: 450px;
+
+    }
+
+
+    .diagram-content {
+
+        padding: 45px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .yuga-size-guide {
+
+        padding:
+            60px
+            0
+            80px;
+
+    }
+
+
+    .size-guide-container {
+
+        width:
+            calc(100% - 32px);
+
+    }
+
+
+    .size-guide-header {
+
+        margin-bottom: 55px;
+
+    }
+
+
+    .size-guide-title-row {
+
+        display: block;
+
+    }
+
+
+    .size-guide-header h1 {
+
+        font-size: 54px;
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .size-guide-header p {
+
+        margin-top: 15px;
+
+        font-size: 14px;
+
+    }
+
+
+    .fit-badge {
+
+        display: inline-block;
+
+        margin-top: 25px;
+
+    }
+
+
+    .section-heading {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 22px;
+
+    }
+
+
+    .measurement-unit {
+
+        margin-left: 32px;
+
+    }
+
+
+    .size-table-wrapper {
+
+        border-radius: 12px;
+
+    }
+
+
+    .size-table {
+
+        min-width: 620px;
+
+    }
+
+
+    .size-table th,
+    .size-table td {
+
+        height: 61px;
+
+        padding: 0 17px;
+
+        font-size: 13px;
+
+    }
+
+
+    .measurement-guide-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .measurement-step {
+
+        min-height: auto;
+
+        padding: 25px;
+
+    }
+
+
+    .step-top {
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .visual-measure-card {
+
+        border-radius: 12px;
+
+    }
+
+
+    .tshirt-diagram {
+
+        min-height: 370px;
+
+        padding: 15px;
+
+    }
+
+
+    .diagram-content {
+
+        padding: 38px 25px;
+
+    }
+
+
+    .diagram-content h3 {
+
+        font-size: 31px;
+
+    }
+
+
+    .fit-guide-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .fit-main-card,
+    .fit-advice-card {
+
+        min-height: 310px;
+
+        padding: 32px;
+
+    }
+
+
+    .fit-main-card h3 {
+
+        font-size: 40px;
+
+    }
+
+
+    .fit-advice-card h3 {
+
+        font-size: 26px;
+
+    }
+
+
+    .size-important {
+
+        padding: 25px;
+
+    }
+
+
+    .size-help {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 35px 28px;
+
+    }
+
+
+    .size-help-content h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .size-help-button {
+
+        width: 100%;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .size-guide-header h1 {
+
+        font-size: 47px;
+
+    }
+
+
+    .measurement-note {
+
+        padding: 17px;
+
+    }
+
+
+    .tshirt-diagram {
+
+        min-height: 320px;
+
+    }
+
+
+    .diagram-content h3 {
+
+        font-size: 28px;
+
+    }
+
+
+    .fit-main-card h3 {
+
+        font-size: 36px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .measurement-step,
+    .size-help-button,
+    .size-help-button i {
+
+        transition: none;
+
+    }
+
+}

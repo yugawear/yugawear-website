@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Track Your Order | YUGA WEAR</title>
+
+    <meta
+        name="description"
+        content="Track your YUGA WEAR order using your tracking number."
+    >
+
+    <meta
+        name="theme-color"
+        content="#0B0B0B"
+    >
+
+    <!-- GOOGLE FONT -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- GLOBAL CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/animations.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/cart.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/product.css"
+    >
+
+
+    <!-- TRACK ORDER CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/track-order.css"
+    >
+
+
+    <!-- FAVICON -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="images/android-chrome-512x512.png"
+    >
+
+
+    <!-- FONT AWESOME -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         GLOBAL NAVBAR
+    ====================================================== -->
+
+    <div id="globalNavbar"></div>
+
+
+
+    <!-- =====================================================
+         TRACK ORDER HERO
+    ====================================================== -->
+
+    <main class="track-page">
+
+
+        <section class="track-hero">
+
+
+            <div class="track-container">
+
+
+                <!-- EYEBROW -->
+
+                <span class="track-eyebrow">
+
+                    YUGA / ORDER TRACKING
+
+                </span>
+
+
+                <!-- HEADING -->
+
+                <h1>
+
+                    TRACK
+                    <span>YOUR ORDER.</span>
+
+                </h1>
+
+
+                <p class="track-intro">
+
+                    Your YUGA order is on its way.
+                    Enter your tracking number below
+                    to view the latest shipment status.
+
+                </p>
+
+
+
+                <!-- TRACKING CARD -->
+
+                <div class="tracking-card">
+
+
+                    <div class="tracking-card-header">
+
+                        <div>
+
+                            <span class="tracking-label">
+
+                                ORDER TRACKING
+
+                            </span>
+
+                            <h2>
+
+                                Where is my order?
+
+                            </h2>
+
+                        </div>
+
+
+                        <div class="tracking-icon">
+
+                            <i class="fa-solid fa-location-arrow"></i>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- FORM -->
+
+                    <form
+                        id="trackingForm"
+                        class="tracking-form"
+                    >
+
+
+                        <div class="tracking-input-wrapper">
+
+
+                            <label
+                                for="trackingNumber"
+                            >
+
+                                TRACKING NUMBER / AWB
+
+                            </label>
+
+
+                            <div class="tracking-input-box">
+
+                                <i class="fa-solid fa-barcode"></i>
+
+
+                                <input
+                                    type="text"
+                                    id="trackingNumber"
+                                    name="trackingNumber"
+                                    placeholder="Enter your tracking number"
+                                    autocomplete="off"
+                                    inputmode="numeric"
+                                    required
+                                >
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <button
+                            type="submit"
+                            class="tracking-button"
+                        >
+
+                            TRACK ORDER
+
+                            <span>
+                                →
+                            </span>
+
+                        </button>
+
+
+                    </form>
+
+
+
+                    <!-- ERROR -->
+
+                    <div
+                        class="tracking-error"
+                        id="trackingError"
+                        aria-live="polite"
+                    >
+
+                        <i class="fa-solid fa-circle-exclamation"></i>
+
+                        <span>
+                            Please enter a valid tracking number.
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- HELP -->
+
+                    <div class="tracking-help">
+
+
+                        <i class="fa-regular fa-circle-question"></i>
+
+
+                        <p>
+
+                            Your tracking number can be found
+                            in your shipping confirmation.
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- TRUST / INFORMATION -->
+
+                <div class="tracking-info-grid">
+
+
+                    <div class="tracking-info-item">
+
+
+                        <div class="tracking-info-icon">
+
+                            <i class="fa-solid fa-box"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                ORDER DISPATCHED
+                            </strong>
+
+                            <p>
+                                Tracking becomes active
+                                once your order is shipped.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="tracking-info-item">
+
+
+                        <div class="tracking-info-icon">
+
+                            <i class="fa-solid fa-truck-fast"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                LIVE TRACKING
+                            </strong>
+
+                            <p>
+                                View the latest shipment
+                                movement from the courier.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <a href="contact.html">
+                        <div class="tracking-info-item">
+
+
+                            <div class="tracking-info-icon">
+
+                                <i class="fa-solid fa-headset"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    NEED HELP?
+                                </strong>
+
+                                <p>
+
+                                    Contact YUGA if your shipment
+                                    appears delayed.
+
+                                </p>
+
+                            </div>
+
+
+                        </div>
+                    </a>
+
+
+                </div>
+
+
+
+                <!-- SHIPPING NOTE -->
+
+                <div class="tracking-note">
+
+
+                    <span>
+                        YUGA / DELIVERY
+                    </span>
+
+
+                    <p>
+
+                        Standard delivery is generally
+                        estimated at 3–7 business days
+                        after dispatch.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         GLOBAL FOOTER
+    ====================================================== -->
+
+    <div id="globalFooter"></div>
+
+
+
+    <!-- =====================================================
+         GLOBAL CART
+    ====================================================== -->
+
+    <div id="globalCart"></div>
+
+
+
+    <!-- =====================================================
+         GLOBAL JAVASCRIPT
+    ====================================================== -->
+
+    <script src="data/products.js"></script>
+
+    <script src="components/cart-item.js"></script>
+
+    <script src="js/components.js"></script>
+
+
+    <script>
+
+        document.addEventListener(
+            "yugaComponentsLoaded",
+            function () {
+
+
+                console.log(
+                    "YUGA: Global components loaded."
+                );
+
+
+                /*
+                 * GLOBAL CART
+                 */
+
+                const cartScript =
+                    document.createElement("script");
+
+                cartScript.src =
+                    "js/cart.js";
+
+                document.body.appendChild(
+                    cartScript
+                );
+
+
+                /*
+                 * GLOBAL WEBSITE SCRIPT
+                 */
+
+                const siteScript =
+                    document.createElement("script");
+
+                siteScript.src =
+                    "js/script.js";
+
+                document.body.appendChild(
+                    siteScript
+                );
+
+
+                /*
+                 * ORDER TRACKING
+                 */
+
+                const trackingForm =
+                    document.getElementById(
+                        "trackingForm"
+                    );
+
+
+                const trackingInput =
+                    document.getElementById(
+                        "trackingNumber"
+                    );
+
+
+                const trackingError =
+                    document.getElementById(
+                        "trackingError"
+                    );
+
+
+                trackingForm.addEventListener(
+                    "submit",
+                    function (event) {
+
+                        event.preventDefault();
+
+
+                        const trackingNumber =
+                            trackingInput.value.trim();
+
+
+                        /*
+                         * Basic validation
+                         */
+
+                        if (
+                            !trackingNumber ||
+                            trackingNumber.length < 6
+                        ) {
+
+                            trackingError.classList.add(
+                                "active"
+                            );
+
+                            trackingInput.focus();
+
+                            return;
+
+                        }
+
+
+                        trackingError.classList.remove(
+                            "active"
+                        );
+
+
+                        /*
+                         * Clean tracking number
+                         */
+
+                        const awb =
+                            trackingNumber
+                                .replace(/\s+/g, "")
+                                .trim();
+
+
+                        /*
+                         * COURIER TRACKING URL
+                         */
+
+                        const trackingURL =
+                            "https://courierupdates.com/?awb="
+                            + encodeURIComponent(awb);
+
+
+                        /*
+                         * Redirect
+                         */
+
+                        window.location.href =
+                            trackingURL;
+
+                    }
+                );
+
+
+                /*
+                 * Remove error while typing
+                 */
+
+                trackingInput.addEventListener(
+                    "input",
+                    function () {
+
+                        trackingError.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
