@@ -1164,7 +1164,9 @@
 
     }
 
-
+    .about-hero .container {
+        width: 90%;
+    }
 }
 
 
