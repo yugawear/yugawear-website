@@ -705,9 +705,6 @@
     max-width:170px;
 
 }
-.story-right img{
-    height: 100% !important;
-}
 .cart-btn,
 
 .buy-btn{
@@ -829,5 +826,107 @@
     color: #F26A21;
 }
 
+
+}
+
+/* ==========================================
+   YUGA MOBILE NAVIGATION — FINAL
+========================================== */
+
+@media (max-width: 992px) {
+
+    .header {
+        position: relative;
+        z-index: 10000;
+    }
+
+
+    .nav-container {
+        position: relative;
+        z-index: 10001;
+    }
+
+
+    .menu-toggle {
+        position: relative;
+        z-index: 10002;
+
+        display: flex;
+
+        width: 42px;
+        height: 42px;
+
+        background: transparent;
+        border: none;
+
+        cursor: pointer;
+
+        pointer-events: auto;
+
+        touch-action: manipulation;
+
+        align-items: center;
+        justify-content: center;
+
+        flex-direction: column;
+
+        gap: 6px;
+    }
+
+
+    .menu-toggle span {
+        display: block;
+
+        width: 24px;
+        height: 2px;
+
+        background: #111;
+
+        pointer-events: none;
+    }
+
+
+    .mobile-menu {
+        position: fixed;
+
+        inset: 0;
+
+        z-index: 20000;
+
+        pointer-events: none;
+
+        opacity: 0;
+
+        visibility: hidden;
+    }
+
+
+    .mobile-menu.active {
+        pointer-events: auto;
+
+        opacity: 1;
+
+        visibility: visible;
+    }
+    .logo h1 {
+        font-size: 20px;
+        font-weight: 700;
+
+    }
+    .logo {
+    transition: .4s;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    }
+
+    .hero-left p {
+    color: #F26A21;
+    }
+    .story-right{
+        width: 100% !important;
+        height: auto !important;
+    }
+    
 
 }
