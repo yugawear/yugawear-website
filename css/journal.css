@@ -1547,8 +1547,9 @@
 
     .journal-hero {
 
-        min-height:
-            650px;
+        min-height: auto;
+        padding-top: 15%;
+
 
     }
 
@@ -1556,6 +1557,7 @@
     .journal-breadcrumb {
 
         top: 25px;
+        left: 5%;
 
     }
 
