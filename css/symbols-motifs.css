@@ -1304,8 +1304,8 @@
 
     .motifs-hero {
 
-        min-height:
-            650px;
+        min-height:auto;
+        padding-top: 15%;
 
     }
 
@@ -1609,7 +1609,7 @@
     .motifs-container {
 
         flex-direction:
-            column;
+            row;
 
         align-items:
             flex-start;
