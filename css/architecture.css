@@ -1214,8 +1214,8 @@
 
     .architecture-hero {
 
-        min-height:
-            650px;
+        min-height:auto;
+        padding-top: 15%;
 
     }
 
@@ -1507,8 +1507,7 @@
     .architecture-next
     .architecture-container {
 
-        flex-direction:
-            column;
+        flex-direction:row;
 
         align-items:
             flex-start;
