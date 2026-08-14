@@ -16,7 +16,6 @@
         const container =
             document.getElementById(containerId);
 
-
         if (!container) {
 
             console.warn(
@@ -27,12 +26,10 @@
 
         }
 
-
         try {
 
             const response =
                 await fetch(file);
-
 
             if (!response.ok) {
 
@@ -42,22 +39,17 @@
 
             }
 
-
             const html =
                 await response.text();
 
-
             container.innerHTML =
                 html;
-
 
             console.log(
                 `YUGA: ${file} loaded`
             );
 
-
             return true;
-
 
         } catch (error) {
 
@@ -65,7 +57,6 @@
                 `YUGA: Failed to load ${file}`,
                 error
             );
-
 
             return false;
 
@@ -75,7 +66,7 @@
 
 
     /* ==========================================
-       LOAD GLOBAL COMPONENTS
+       LOAD NAVBAR
     ========================================== */
 
     await loadComponent(
@@ -84,11 +75,73 @@
     );
 
 
+    /* ==========================================
+       LOAD MOBILE MENU
+    ========================================== */
+
+    try {
+
+        const response =
+            await fetch("/components/mobile.html");
+
+        if (!response.ok) {
+
+            throw new Error(
+                `${response.status} ${response.statusText}`
+            );
+
+        }
+
+        const mobileHTML =
+            await response.text();
+
+
+        /*
+            Prevent duplicate mobile menu
+        */
+
+        const existingMobileMenu =
+            document.querySelector(".mobile-menu");
+
+
+        if (!existingMobileMenu) {
+
+            document.body.insertAdjacentHTML(
+                "beforeend",
+                mobileHTML
+            );
+
+        }
+
+
+        console.log(
+            "YUGA: /components/mobile.html loaded"
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "YUGA: Failed to load /components/mobile.html",
+            error
+        );
+
+    }
+
+
+    /* ==========================================
+       LOAD CART
+    ========================================== */
+
     await loadComponent(
         "globalCart",
         "/components/cart.html"
     );
 
+
+    /* ==========================================
+       LOAD FOOTER
+    ========================================== */
 
     await loadComponent(
         "globalFooter",
@@ -125,7 +178,8 @@
 
         setTimeout(() => {
 
-            loader.style.display = "none";
+            loader.style.display =
+                "none";
 
         }, 2000);
 
