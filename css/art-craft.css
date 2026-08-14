@@ -1218,8 +1218,8 @@
 
     .artcraft-hero {
 
-        min-height:
-            650px;
+        min-height: auto;
+        padding-top: 15%;
 
     }
 
@@ -1512,7 +1512,7 @@
     .artcraft-container {
 
         flex-direction:
-            column;
+            row;
 
         align-items:
             flex-start;
