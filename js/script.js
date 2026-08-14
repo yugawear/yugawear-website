@@ -4,7 +4,7 @@
         GLOBAL / PAGE-SAFE VERSION
 ========================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+function initYugaWebsite() {
 
 
     /* ==========================================
@@ -524,15 +524,153 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* ==========================================
-            MOBILE MENU
-    ========================================== */
+/* ==========================================
+        MOBILE MENU
+        DYNAMIC COMPONENT SAFE
+========================================== */
 
-    const menuToggle =
-        document.querySelector(
-            ".menu-toggle"
+/*
+    The navbar and mobile menu are loaded
+    dynamically by components.js.
+
+    Therefore we use event delegation
+    with CAPTURE mode so the hamburger
+    works even when other components have
+    click handlers.
+*/
+
+
+/* ==========================================
+        HAMBURGER CLICK
+========================================== */
+
+document.addEventListener(
+    "click",
+    function (event) {
+
+        const menuToggle =
+            event.target.closest(".menu-toggle");
+
+
+        if (!menuToggle) {
+            return;
+        }
+
+
+        console.log(
+            "🔥 YUGA: HAMBURGER CLICK DETECTED",
+            event.target
         );
 
+
+        event.preventDefault();
+        event.stopPropagation();
+
+
+        const mobileMenu =
+            document.querySelector(".mobile-menu");
+
+
+        if (!mobileMenu) {
+
+            console.error(
+                "❌ YUGA: .mobile-menu not found"
+            );
+
+            return;
+
+        }
+
+
+        /*
+            OPEN MENU
+        */
+
+        mobileMenu.classList.add("active");
+
+
+        document.body.style.overflow = "hidden";
+
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+
+        console.log(
+            "✅ YUGA: Mobile menu OPENED"
+        );
+
+    },
+    true
+);
+
+
+/* ==========================================
+        CLOSE BUTTON
+========================================== */
+
+document.addEventListener(
+    "click",
+    function (event) {
+
+        const closeButton =
+            event.target.closest(".close-menu");
+
+
+        if (!closeButton) {
+            return;
+        }
+
+
+        console.log(
+            "🔥 YUGA: CLOSE BUTTON CLICKED"
+        );
+
+
+        event.preventDefault();
+        event.stopPropagation();
+
+
+        closeMobileMenu();
+
+    },
+    true
+);
+
+
+/* ==========================================
+        MOBILE MENU LINKS
+========================================== */
+
+document.addEventListener(
+    "click",
+    function (event) {
+
+        const mobileLink =
+            event.target.closest(
+                ".mobile-menu a"
+            );
+
+
+        if (!mobileLink) {
+            return;
+        }
+
+
+        closeMobileMenu();
+
+    },
+    true
+);
+
+
+/* ==========================================
+        CLOSE MOBILE MENU
+========================================== */
+
+function closeMobileMenu() {
 
     const mobileMenu =
         document.querySelector(
@@ -540,149 +678,86 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-    const closeMenu =
+    const menuToggle =
         document.querySelector(
-            ".close-menu"
+            ".menu-toggle"
         );
 
 
-    /*
-        IMPORTANT:
-
-        The old code assumed all three
-        elements existed.
-
-        Checkout pages may not contain them.
-
-        We only attach events when the
-        required elements exist.
-    */
+    if (!mobileMenu) {
+        return;
+    }
 
 
-    /* ==========================================
-            OPEN MOBILE MENU
-    ========================================== */
+    mobileMenu.classList.remove(
+        "active"
+    );
 
-    if (
-        menuToggle &&
-        mobileMenu
-    ) {
 
-        menuToggle.addEventListener(
-            "click",
-            () => {
+    document.body.style.overflow =
+        "";
 
-                mobileMenu.classList.add(
-                    "active"
-                );
 
-                document.body.style.overflow =
-                    "hidden";
+    if (menuToggle) {
 
-            }
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
         );
 
     }
 
 
-    /* ==========================================
-            CLOSE MOBILE MENU
-    ========================================== */
+    console.log(
+        "✅ YUGA: Mobile menu CLOSED"
+    );
 
-    if (
-        closeMenu &&
-        mobileMenu
-    ) {
+}
 
-        closeMenu.addEventListener(
-            "click",
-            () => {
 
-                mobileMenu.classList.remove(
-                    "active"
-                );
+/* ==========================================
+        ESCAPE KEY
+========================================== */
 
-                document.body.style.overflow =
-                    "";
+document.addEventListener(
+    "keydown",
+    function (event) {
 
-            }
-        );
+        if (event.key === "Escape") {
+
+            closeMobileMenu();
+
+        }
 
     }
+);
 
 
-    /* ==========================================
-            MOBILE MENU LINKS
-    ========================================== */
 
-    if (mobileMenu) {
-
-        const mobileLinks =
-            mobileMenu.querySelectorAll(
-                "a"
-            );
-
-
-        mobileLinks.forEach(link => {
-
-            link.addEventListener(
-                "click",
-                () => {
-
-                    mobileMenu.classList.remove(
-                        "active"
-                    );
-
-                    document.body.style.overflow =
-                        "";
-
-                }
-            );
-
-        });
-
-    }
-
-
-    /* ==========================================
-            ESCAPE KEY
-            CLOSE MOBILE MENU
-    ========================================== */
-
-    if (mobileMenu) {
-
-        document.addEventListener(
-            "keydown",
-            (e) => {
-
-                if (
-                    e.key === "Escape" &&
-                    mobileMenu.classList.contains(
-                        "active"
-                    )
-                ) {
-
-                    mobileMenu.classList.remove(
-                        "active"
-                    );
-
-                    document.body.style.overflow =
-                        "";
-
-                }
-
-            }
-        );
-
-    }
-
-
-    /* ==========================================
-            YUGA SCRIPT INITIALIZED
-    ========================================== */
+/* ==========================================
+        YUGA SCRIPT INITIALIZED
+========================================== */
 
     console.log(
         "YUGA: script.js initialized successfully."
     );
 
-});
+}
+
+
+/* ==========================================
+        SAFE INITIALIZATION
+========================================== */
+
+if (document.readyState === "loading") {
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        initYugaWebsite
+    );
+
+} else {
+
+    initYugaWebsite();
+
+}
