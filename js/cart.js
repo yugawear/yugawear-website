@@ -970,13 +970,51 @@ function addCurrentProductToCart() {
 
 
     /*
-     * Save
-     */
+ * Save
+ */
 
-    saveCart();
+saveCart();
 
 
-    return true;
+/* ==========================================
+   META PIXEL — ADD TO CART
+   ========================================== */
+
+if (typeof fbq === "function") {
+
+    const totalValue =
+        Number(product.price) *
+        Number(quantity);
+
+    fbq("track", "AddToCart", {
+
+        content_ids: [product.id],
+
+        content_name: product.name,
+
+        content_type: "product",
+
+        content_category: product.collection,
+
+        value: totalValue,
+
+        currency: "INR"
+
+    });
+
+    console.log(
+        "YUGA Meta Pixel: AddToCart",
+        product.name,
+        "Qty:",
+        quantity,
+        "Value:",
+        totalValue
+    );
+
+}
+
+
+return true;
 
 }
 
