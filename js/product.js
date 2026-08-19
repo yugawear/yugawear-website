@@ -327,6 +327,35 @@ if (product) {
 
     loadGallery(selectedColor);
 
+    /*====================================
+            META PIXEL — VIEW CONTENT
+    ====================================*/
+
+    if (typeof fbq === "function") {
+
+        fbq("track", "ViewContent", {
+
+            content_ids: [product.id],
+
+            content_name: product.name,
+
+            content_type: "product",
+
+            content_category: product.collection,
+
+            value: product.price,
+
+            currency: "INR"
+
+        });
+
+        console.log(
+            "YUGA Meta Pixel: ViewContent",
+            product.name
+        );
+
+    }
+
 }
 
 
