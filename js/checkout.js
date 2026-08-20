@@ -834,6 +834,34 @@ Thank you ❤️`;
                 result.orderId;
 
 
+                /*================================
+    META PIXEL - CONTACT
+=================================*/
+
+if (typeof fbq === "function") {
+
+    fbq(
+        "track",
+        "Contact",
+        {
+            content_ids: cart.map(item => item.id),
+
+            contents: cart.map(item => ({
+                id: item.id,
+                quantity: Number(item.quantity)
+            })),
+
+            content_type: "product",
+
+            value: Number(subtotal),
+
+            currency: "INR"
+        }
+    );
+
+}
+
+
             /*============================
                 FINAL WHATSAPP MESSAGE
             ============================*/
