@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Thank You | YUGA WEAR</title>
+
+    <meta
+        name="description"
+        content="Thank you for your order from YUGA WEAR."
+    >
+
+    <meta name="theme-color" content="#0B0B0B">
+
+    <!-- FONTS -->
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- GLOBAL CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/product.css">
+
+    <!-- THANK YOU CSS -->
+    <link rel="stylesheet" href="css/thankyou.css">
+
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+    <!-- FAVICON -->
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="/images/android-chrome-512x512.png"
+    >
+
+    <!-- META PIXEL -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {
+            if(f.fbq)return;
+
+            n=f.fbq=function(){
+                n.callMethod ?
+                n.callMethod.apply(n,arguments) :
+                n.queue.push(arguments)
+            };
+
+            if(!f._fbq)f._fbq=n;
+
+            n.push=n;
+            n.loaded=!0;
+            n.version='2.0';
+            n.queue=[];
+
+            t=b.createElement(e);
+            t.async=!0;
+            t.src=v;
+
+            s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)
+
+        }(
+            window,
+            document,
+            'script',
+            'https://connect.facebook.net/en_US/fbevents.js'
+        );
+
+        fbq('init', '1018363181030376');
+        fbq('track', 'PageView');
+    </script>
+
+    <noscript>
+
+        <img
+            height="1"
+            width="1"
+            style="display:none"
+            src="https://www.facebook.com/tr?id=1018363181030376&ev=PageView&noscript=1"
+        >
+
+    </noscript>
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     GLOBAL NAVBAR
+========================================== -->
+
+<div id="globalNavbar"></div>
+
+
+
+<!-- ==========================================
+     THANK YOU PAGE
+========================================== -->
+
+<main class="thankyou-page">
+
+
+    <!-- ======================================
+         TOP THANK YOU CARD
+    ======================================= -->
+
+    <section class="thankyou-hero">
+
+        <div class="thankyou-icon">
+
+            <i class="fa-solid fa-check"></i>
+
+        </div>
+
+
+        <p class="thankyou-eyebrow">
+            ORDER CONFIRMED
+        </p>
+
+
+        <h1>
+            Thank you for choosing YUGA WEAR.
+        </h1>
+
+
+        <p class="thankyou-message">
+
+            Your order has been successfully placed.
+
+            <br>
+
+            A piece of India's story is now on its way to you.
+
+        </p>
+
+
+        <div class="thankyou-order-status">
+
+            <span class="status-dot"></span>
+
+            Payment successful
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         MAIN CONTENT
+    ======================================= -->
+
+    <section class="thankyou-container">
+
+
+        <!-- ==================================
+             ORDER INFORMATION
+        =================================== -->
+
+        <div class="thankyou-card">
+
+
+            <div class="card-header">
+
+                <div>
+
+                    <span class="card-label">
+                        YOUR ORDER
+                    </span>
+
+                    <h2 id="thankyouOrderId">
+                        YG_0000
+                    </h2>
+
+                </div>
+
+
+                <div class="paid-badge">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    PAID
+
+                </div>
+
+            </div>
+
+
+            <div class="order-meta">
+
+                <div>
+
+                    <span>
+                        ORDER DATE
+                    </span>
+
+                    <strong id="orderDate">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        PAYMENT
+                    </span>
+
+                    <strong id="paymentMethod">
+                        Razorpay
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        TOTAL
+                    </span>
+
+                    <strong id="orderTotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================
+             PRODUCT DETAILS
+        =================================== -->
+
+        <div class="thankyou-card">
+
+            <div class="section-heading">
+
+                <span>
+                    ORDER DETAILS
+                </span>
+
+            </div>
+
+
+            <div id="thankyouItems">
+
+                <!-- Products inserted by JS -->
+
+            </div>
+
+
+            <div class="total-row">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="detailsTotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================
+             CUSTOMER DETAILS
+        =================================== -->
+
+        <div class="thankyou-card">
+
+            <div class="section-heading">
+
+                <span>
+                    DELIVERY DETAILS
+                </span>
+
+            </div>
+
+
+            <div class="customer-details-grid">
+
+
+                <div class="customer-detail">
+
+                    <span>
+                        NAME
+                    </span>
+
+                    <strong id="customerName">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="customer-detail">
+
+                    <span>
+                        PHONE
+                    </span>
+
+                    <strong id="customerPhone">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="customer-detail">
+
+                    <span>
+                        EMAIL
+                    </span>
+
+                    <strong id="customerEmail">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="customer-detail">
+
+                    <span>
+                        CITY
+                    </span>
+
+                    <strong id="customerCity">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="customer-detail">
+
+                    <span>
+                        STATE
+                    </span>
+
+                    <strong id="customerState">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="customer-detail">
+
+                    <span>
+                        PIN CODE
+                    </span>
+
+                    <strong id="customerPin">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="customer-detail full-width">
+
+                    <span>
+                        SHIPPING ADDRESS
+                    </span>
+
+                    <strong id="customerAddress">
+                        —
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================
+             PAYMENT INFORMATION
+        =================================== -->
+
+        <div class="thankyou-card payment-card">
+
+            <div class="section-heading">
+
+                <span>
+                    PAYMENT INFORMATION
+                </span>
+
+            </div>
+
+
+            <div class="payment-row">
+
+                <span>
+                    Payment status
+                </span>
+
+                <strong class="payment-success">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Successful
+
+                </strong>
+
+            </div>
+
+
+            <div class="payment-row">
+
+                <span>
+                    Razorpay Order ID
+                </span>
+
+                <strong
+                    id="razorpayOrderId"
+                    class="payment-id">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="payment-row">
+
+                <span>
+                    Payment ID
+                </span>
+
+                <strong
+                    id="razorpayPaymentId"
+                    class="payment-id">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================
+             NEXT STEP MESSAGE
+        =================================== -->
+
+        <div class="delivery-message">
+
+            <div class="delivery-icon">
+
+                <i class="fa-solid fa-box"></i>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Your YUGA WEAR piece is being prepared.
+                </h3>
+
+                <p>
+
+                    We'll process your order and get it
+                    ready for dispatch. Keep your order
+                    number <strong id="bottomOrderId">—</strong>
+                    for future reference.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================
+             BUTTONS
+        =================================== -->
+
+        <div class="thankyou-actions">
+
+            <a
+                href="index.html"
+                class="primary-button">
+
+                Continue Shopping
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <a
+                href="https://wa.me/917306520432"
+                target="_blank"
+                class="secondary-button">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                Contact YUGA WEAR
+
+            </a>
+
+        </div>
+
+
+
+        <!-- ==================================
+             BRAND STATEMENT
+        =================================== -->
+
+        <div class="thankyou-brand">
+
+            <span>
+                YUGA WEAR
+            </span>
+
+            <p>
+                Ancient Roots. Future Identity.
+            </p>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+
+<!-- ==========================================
+     GLOBAL FOOTER
+========================================== -->
+
+<div id="globalFooter"></div>
+
+
+
+<!-- ==========================================
+     GLOBAL JAVASCRIPT
+========================================== -->
+
+<script src="js/components.js"></script>
+
+<script src="js/script.js"></script>
+
+<script src="js/thankyou.js"></script>
+
+
+</body>
+
+</html>
