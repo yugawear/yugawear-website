@@ -1,6 +1,7 @@
 /* =========================================================
         YUGA CHECKOUT
-        Razorpay + Google Sheets + WhatsApp + Meta Pixel
+        Razorpay + Google Sheets + Meta Pixel
+        + Thank You Page
 ========================================================= */
 
 
@@ -28,20 +29,15 @@ const placeOrder =
 const CUSTOMER_STORAGE_KEY =
     "yuga-customer";
 
+const LAST_ORDER_STORAGE_KEY =
+    "yuga-last-order";
+
 
 /* =========================================================
         STATE
 ========================================================= */
 
 let isSubmitting = false;
-
-
-/* =========================================================
-        WHATSAPP
-========================================================= */
-
-const WHATSAPP_NUMBER =
-    "917306520432";
 
 
 /* =========================================================
@@ -59,12 +55,16 @@ const ORDER_API =
 /*
     IMPORTANT:
 
-    This is the TEST Key ID.
+    This is your TEST Key ID.
 
-    Your Key Secret MUST NOT be placed here.
+    NEVER put your Razorpay Key Secret
+    inside this JavaScript file.
 
-    Keep the Secret inside:
-    Google Apps Script → Script Properties
+    Keep the Key Secret inside:
+
+    Google Apps Script
+    → Project Settings
+    → Script Properties
 */
 
 const RAZORPAY_KEY_ID =
@@ -90,7 +90,6 @@ function startLoading(text = "Processing...") {
         <i class="fa-solid fa-spinner fa-spin"></i>
         ${text}
     `;
-
 }
 
 
@@ -100,11 +99,12 @@ function updateLoading(text) {
         return;
     }
 
+    placeOrder.disabled = true;
+
     placeOrder.innerHTML = `
         <i class="fa-solid fa-spinner fa-spin"></i>
         ${text}
     `;
-
 }
 
 
@@ -119,7 +119,6 @@ function stopLoading() {
     placeOrder.innerHTML =
         placeOrder.dataset.originalText ||
         "Pay Securely →";
-
 }
 
 
@@ -129,11 +128,24 @@ function stopLoading() {
 
 function getCart() {
 
-    return JSON.parse(
-        localStorage.getItem(
-            CART_STORAGE_KEY
-        )
-    ) || [];
+    try {
+
+        return JSON.parse(
+            localStorage.getItem(
+                CART_STORAGE_KEY
+            )
+        ) || [];
+
+    } catch (error) {
+
+        console.error(
+            "YUGA cart error:",
+            error
+        );
+
+        return [];
+
+    }
 
 }
 
@@ -144,42 +156,78 @@ function getCart() {
 
 function saveCustomerDetails() {
 
+    const nameInput =
+        document.getElementById(
+            "customerName"
+        );
+
+    const emailInput =
+        document.getElementById(
+            "customerEmail"
+        );
+
+    const phoneInput =
+        document.getElementById(
+            "customerPhone"
+        );
+
+    const addressInput =
+        document.getElementById(
+            "customerAddress"
+        );
+
+    const cityInput =
+        document.getElementById(
+            "customerCity"
+        );
+
+    const stateInput =
+        document.getElementById(
+            "customerState"
+        );
+
+    const pinInput =
+        document.getElementById(
+            "customerPin"
+        );
+
+
     const customer = {
 
         name:
-            document.getElementById(
-                "customerName"
-            ).value,
+            nameInput
+                ? nameInput.value
+                : "",
 
         email:
-            document.getElementById(
-                "customerEmail"
-            ).value,
+            emailInput
+                ? emailInput.value
+                : "",
 
         phone:
-            document.getElementById(
-                "customerPhone"
-            ).value,
+            phoneInput
+                ? phoneInput.value
+                : "",
 
         address:
-            document.getElementById(
-                "customerAddress"
-            ).value,
+            addressInput
+                ? addressInput.value
+                : "",
 
         city:
-            document.getElementById(
-                "customerCity"
-            ).value,
+            cityInput
+                ? cityInput.value
+                : "",
 
         state:
-            document.getElementById(
-                "customerState"
-            ).value,
+            stateInput
+                ? stateInput.value
+                : "",
 
         pin:
-            document.getElementById(
-                "customerPin"
-            ).value
+            pinInput
+                ? pinInput.value
+                : ""
 
     };
 
@@ -188,7 +236,9 @@ function saveCustomerDetails() {
 
         CUSTOMER_STORAGE_KEY,
 
-        JSON.stringify(customer)
+        JSON.stringify(
+            customer
+        )
 
     );
 
@@ -197,12 +247,25 @@ function saveCustomerDetails() {
 
 function loadCustomerDetails() {
 
-    const customer =
-        JSON.parse(
-            localStorage.getItem(
-                CUSTOMER_STORAGE_KEY
-            )
+    let customer = null;
+
+
+    try {
+
+        customer =
+            JSON.parse(
+                localStorage.getItem(
+                    CUSTOMER_STORAGE_KEY
+                )
+            );
+
+    } catch (error) {
+
+        console.warn(
+            "Unable to load saved customer details."
         );
+
+    }
 
 
     if (!customer) {
@@ -210,46 +273,96 @@ function loadCustomerDetails() {
     }
 
 
-    document.getElementById(
-        "customerName"
-    ).value =
-        customer.name || "";
+    const nameInput =
+        document.getElementById(
+            "customerName"
+        );
+
+    const emailInput =
+        document.getElementById(
+            "customerEmail"
+        );
+
+    const phoneInput =
+        document.getElementById(
+            "customerPhone"
+        );
+
+    const addressInput =
+        document.getElementById(
+            "customerAddress"
+        );
+
+    const cityInput =
+        document.getElementById(
+            "customerCity"
+        );
+
+    const stateInput =
+        document.getElementById(
+            "customerState"
+        );
+
+    const pinInput =
+        document.getElementById(
+            "customerPin"
+        );
 
 
-    document.getElementById(
-        "customerEmail"
-    ).value =
-        customer.email || "";
+    if (nameInput) {
+
+        nameInput.value =
+            customer.name || "";
+
+    }
 
 
-    document.getElementById(
-        "customerPhone"
-    ).value =
-        customer.phone || "";
+    if (emailInput) {
+
+        emailInput.value =
+            customer.email || "";
+
+    }
 
 
-    document.getElementById(
-        "customerAddress"
-    ).value =
-        customer.address || "";
+    if (phoneInput) {
+
+        phoneInput.value =
+            customer.phone || "";
+
+    }
 
 
-    document.getElementById(
-        "customerCity"
-    ).value =
-        customer.city || "";
+    if (addressInput) {
+
+        addressInput.value =
+            customer.address || "";
+
+    }
 
 
-    document.getElementById(
-        "customerState"
-    ).value =
-        customer.state || "";
+    if (cityInput) {
+
+        cityInput.value =
+            customer.city || "";
+
+    }
 
 
-    document.getElementById(
-        "customerPin"
-    ).value =
-        customer.pin || "";
+    if (stateInput) {
+
+        stateInput.value =
+            customer.state || "";
+
+    }
+
+
+    if (pinInput) {
+
+        pinInput.value =
+            customer.pin || "";
+
+    }
 
 }
 
@@ -379,7 +492,9 @@ function validateCustomerDetails() {
     let valid = true;
 
 
-    /* NAME */
+    /* =========================================
+            NAME
+    ========================================= */
 
     if (!name) {
 
@@ -392,7 +507,9 @@ function validateCustomerDetails() {
     }
 
 
-    /* PHONE */
+    /* =========================================
+            PHONE
+    ========================================= */
 
     if (
         !/^[6-9]\d{9}$/.test(
@@ -409,7 +526,9 @@ function validateCustomerDetails() {
     }
 
 
-    /* ADDRESS */
+    /* =========================================
+            ADDRESS
+    ========================================= */
 
     if (!address) {
 
@@ -422,7 +541,9 @@ function validateCustomerDetails() {
     }
 
 
-    /* CITY */
+    /* =========================================
+            CITY
+    ========================================= */
 
     if (!city) {
 
@@ -435,7 +556,9 @@ function validateCustomerDetails() {
     }
 
 
-    /* STATE */
+    /* =========================================
+            STATE
+    ========================================= */
 
     if (!state) {
 
@@ -448,7 +571,9 @@ function validateCustomerDetails() {
     }
 
 
-    /* PIN */
+    /* =========================================
+            PIN
+    ========================================= */
 
     if (
         !/^\d{6}$/.test(
@@ -465,7 +590,9 @@ function validateCustomerDetails() {
     }
 
 
-    /* OPTIONAL EMAIL */
+    /* =========================================
+            OPTIONAL EMAIL
+    ========================================= */
 
     if (
         email &&
@@ -520,84 +647,83 @@ function renderCheckout() {
     }
 
 
-    checkoutItems.innerHTML =
+    if (checkoutItems) {
 
-        cart.map(
-            item => `
+        checkoutItems.innerHTML =
 
-            <div class="checkout-item">
+            cart.map(
+                item => `
 
-                <img
-                    src="${item.image}"
-                    alt="${item.name}">
+                <div class="checkout-item">
 
-                <div>
+                    <img
+                        src="${item.image}"
+                        alt="${item.name}">
 
-                    <h4>
-                        ${item.name}
-                    </h4>
+                    <div>
 
-                    <p>
-                        ${item.color} • ${item.size}
-                    </p>
+                        <h4>
+                            ${item.name}
+                        </h4>
 
-                    <small>
-                        Qty ${item.quantity}
-                    </small>
+                        <p>
+                            ${item.color} • ${item.size}
+                        </p>
+
+                        <small>
+                            Qty ${item.quantity}
+                        </small>
+
+                    </div>
+
+                    <strong>
+
+                        ₹${(
+                            Number(item.price) *
+                            Number(item.quantity)
+                        ).toLocaleString("en-IN")}
+
+                    </strong>
 
                 </div>
 
-                <strong>
+            `
+            ).join("");
 
-                    ₹${(
-                        Number(item.price) *
-                        Number(item.quantity)
-                    ).toLocaleString("en-IN")}
-
-                </strong>
-
-            </div>
-
-        `
-        ).join("");
+    }
 
 
     const subtotal =
-        cart.reduce(
-
-            (sum, item) =>
-
-                sum +
-                (
-                    Number(item.price) *
-                    Number(item.quantity)
-                ),
-
-            0
-
+        calculateCartTotal(
+            cart
         );
 
 
-    checkoutSubtotal.textContent =
-        "₹" +
-        subtotal.toLocaleString(
-            "en-IN"
-        );
+    if (checkoutSubtotal) {
+
+        checkoutSubtotal.textContent =
+            "₹" +
+            subtotal.toLocaleString(
+                "en-IN"
+            );
+
+    }
 
 
-    checkoutTotal.textContent =
-        "₹" +
-        subtotal.toLocaleString(
-            "en-IN"
-        );
+    if (checkoutTotal) {
+
+        checkoutTotal.textContent =
+            "₹" +
+            subtotal.toLocaleString(
+                "en-IN"
+            );
+
+    }
 
 
     loadCustomerDetails();
 
 }
-
-
-renderCheckout();
 
 
 /* =========================================================
@@ -688,7 +814,9 @@ function trackInitiateCheckout(
                 "product",
 
             value:
-                Number(subtotal),
+                Number(
+                    subtotal
+                ),
 
             currency:
                 "INR"
@@ -698,7 +826,17 @@ function trackInitiateCheckout(
 
 
     console.log(
-        "YUGA Meta Pixel: InitiateCheckout"
+        "YUGA Meta Pixel: InitiateCheckout",
+        {
+            content_ids:
+                contentIds,
+
+            value:
+                subtotal,
+
+            currency:
+                "INR"
+        }
     );
 
 }
@@ -718,6 +856,10 @@ function trackPurchase(
     if (
         typeof fbq !== "function"
     ) {
+
+        console.warn(
+            "YUGA Meta Pixel: fbq not available for Purchase."
+        );
 
         return;
 
@@ -766,7 +908,9 @@ function trackPurchase(
                 "product",
 
             value:
-                Number(amount),
+                Number(
+                    amount
+                ),
 
             currency:
                 "INR",
@@ -781,8 +925,13 @@ function trackPurchase(
     console.log(
         "YUGA Meta Pixel: Purchase",
         {
-            orderId,
-            amount
+
+            orderId:
+                orderId,
+
+            amount:
+                amount
+
         }
     );
 
@@ -1054,135 +1203,37 @@ async function savePaidOrder(
 
 
 /* =========================================================
-        WHATSAPP ORDER MESSAGE
+        SAVE ORDER FOR THANK YOU PAGE
 ========================================================= */
 
-function createWhatsAppMessage(
-    orderId,
-    customer,
-    cart,
-    subtotal,
-    razorpayPaymentId
+function saveOrderForThankYouPage(
+    order
 ) {
 
+    try {
 
-    let orderText = "";
+        localStorage.setItem(
 
+            LAST_ORDER_STORAGE_KEY,
 
-    cart.forEach(
-        (item, index) => {
+            JSON.stringify(
+                order
+            )
 
-            const itemTotal =
-                Number(item.price) *
-                Number(item.quantity);
-
-
-            orderText +=
-
-`${index + 1}.
-
-${item.name}
-
-Colour: ${item.color}
-
-Size: ${item.size}
-
-Qty: ${item.quantity}
-
-₹${itemTotal.toLocaleString("en-IN")}
-
-
-`;
-
-        }
-    );
-
-
-    return `Hello YUGA,
-
-My payment was successful and I would like to confirm my order.
-
-━━━━━━━━━━━━━━
-
-ORDER ID
-${orderId}
-
-PAYMENT ID
-${razorpayPaymentId}
-
-━━━━━━━━━━━━━━
-
-CUSTOMER DETAILS
-
-Name:
-${customer.name}
-
-Phone:
-${customer.phone}
-
-Email:
-${customer.email || "-"}
-
-Address:
-${customer.address}
-
-${customer.city}
-
-${customer.state}
-
-${customer.pin}
-
-━━━━━━━━━━━━━━
-
-ORDER
-
-${orderText}
-
-━━━━━━━━━━━━━━
-
-Subtotal:
-₹${subtotal.toLocaleString("en-IN")}
-
-Shipping:
-FREE
-
-TOTAL PAID:
-₹${subtotal.toLocaleString("en-IN")}
-
-━━━━━━━━━━━━━━
-
-Payment:
-Razorpay
-
-Thank you ❤️
-
-YUGA
-India Reimagined`;
-
-}
-
-
-/* =========================================================
-        OPEN WHATSAPP
-========================================================= */
-
-function openWhatsApp(
-    message
-) {
-
-    const finalURL =
-        "https://wa.me/" +
-        WHATSAPP_NUMBER +
-        "?text=" +
-        encodeURIComponent(
-            message
         );
 
+        console.log(
+            "YUGA: Order saved for thank you page."
+        );
 
-    window.open(
-        finalURL,
-        "_blank"
-    );
+    } catch (error) {
+
+        console.error(
+            "YUGA: Could not save order for thank you page.",
+            error
+        );
+
+    }
 
 }
 
@@ -1206,8 +1257,25 @@ function handlePaymentFailure(
     isSubmitting = false;
 
 
+    let message =
+        "Payment was not completed. Your cart is still saved. You can try again.";
+
+
+    if (
+        response &&
+        response.error &&
+        response.error.description
+    ) {
+
+        message +=
+            "\n\n" +
+            response.error.description;
+
+    }
+
+
     alert(
-        "Payment was not completed. Your cart is still محفوظ. You can try again."
+        message
     );
 
 }
@@ -1217,611 +1285,684 @@ function handlePaymentFailure(
         PLACE ORDER
 ========================================================= */
 
-placeOrder.addEventListener(
-    "click",
-    async function () {
+if (placeOrder) {
+
+    placeOrder.addEventListener(
+        "click",
+        async function () {
 
 
-        /* =================================================
-            PREVENT DOUBLE CLICK
-        ================================================= */
+            /* =========================================
+                    PREVENT DOUBLE CLICK
+            ========================================= */
 
-        if (
-            isSubmitting
-        ) {
+            if (
+                isSubmitting
+            ) {
 
-            return;
+                return;
 
-        }
-
-
-        /* =================================================
-            CHECK RAZORPAY
-        ================================================= */
-
-        if (
-            !isRazorpayReady()
-        ) {
-
-            alert(
-                "Payment system is not ready. Please refresh the page and try again."
-            );
-
-            return;
-
-        }
+            }
 
 
-        /* =================================================
-            VALIDATE CUSTOMER
-        ================================================= */
+            /* =========================================
+                    CHECK RAZORPAY
+            ========================================= */
 
-        if (
-            !validateCustomerDetails()
-        ) {
+            if (
+                !isRazorpayReady()
+            ) {
 
-            return;
-
-        }
-
-
-        /* =================================================
-            GET CUSTOMER
-        ================================================= */
-
-        const customer = {
-
-            name:
-                document
-                    .getElementById(
-                        "customerName"
-                    )
-                    .value
-                    .trim(),
-
-            email:
-                document
-                    .getElementById(
-                        "customerEmail"
-                    )
-                    .value
-                    .trim(),
-
-            phone:
-                document
-                    .getElementById(
-                        "customerPhone"
-                    )
-                    .value
-                    .trim(),
-
-            address:
-                document
-                    .getElementById(
-                        "customerAddress"
-                    )
-                    .value
-                    .trim(),
-
-            city:
-                document
-                    .getElementById(
-                        "customerCity"
-                    )
-                    .value
-                    .trim(),
-
-            state:
-                document
-                    .getElementById(
-                        "customerState"
-                    )
-                    .value
-                    .trim(),
-
-            pin:
-                document
-                    .getElementById(
-                        "customerPin"
-                    )
-                    .value
-                    .trim()
-
-        };
-
-
-        /* =================================================
-            GET CART
-        ================================================= */
-
-        const cart =
-            getCart();
-
-
-        if (
-            !cart ||
-            cart.length === 0
-        ) {
-
-            alert(
-                "Your cart is empty."
-            );
-
-            window.location.href =
-                "cart.html";
-
-            return;
-
-        }
-
-
-        /* =================================================
-            CALCULATE TOTAL
-        ================================================= */
-
-        const subtotal =
-            calculateCartTotal(
-                cart
-            );
-
-
-        if (
-            !subtotal ||
-            subtotal <= 0
-        ) {
-
-            alert(
-                "Invalid order amount."
-            );
-
-            return;
-
-        }
-
-
-        /* =================================================
-            META PIXEL
-            INITIATE CHECKOUT
-        ================================================= */
-
-        trackInitiateCheckout(
-            cart,
-            subtotal
-        );
-
-
-        /* =================================================
-            START PROCESS
-        ================================================= */
-
-        isSubmitting = true;
-
-        startLoading(
-            "Preparing payment..."
-        );
-
-
-        try {
-
-
-            /* =============================================
-                UNIQUE RECEIPT
-            ============================================= */
-
-            const receipt =
-                "YUGA_" +
-                Date.now();
-
-
-            /* =============================================
-                CREATE RAZORPAY ORDER
-            ============================================= */
-
-            updateLoading(
-                "Connecting to Razorpay..."
-            );
-
-
-            const razorpayOrder =
-                await createRazorpayOrder(
-                    subtotal,
-                    receipt
+                alert(
+                    "Payment system is not ready. Please refresh the page and try again."
                 );
 
+                return;
 
-            console.log(
-                "YUGA Razorpay Order:",
-                razorpayOrder
-            );
+            }
 
 
-            /* =============================================
-                OPEN RAZORPAY CHECKOUT
-            ============================================= */
+            /* =========================================
+                    VALIDATE CUSTOMER
+            ========================================= */
 
-            updateLoading(
-                "Opening secure payment..."
-            );
+            if (
+                !validateCustomerDetails()
+            ) {
+
+                return;
+
+            }
 
 
-            const options = {
+            /* =========================================
+                    GET CUSTOMER
+            ========================================= */
 
-                key:
-                    RAZORPAY_KEY_ID,
-
-                amount:
-                    razorpayOrder.amount,
-
-                currency:
-                    razorpayOrder.currency ||
-                    "INR",
+            const customer = {
 
                 name:
-                    "YUGA WEAR",
-
-                description:
-                    "YUGA — India Reimagined",
-
-                image:
-                    "https://yugawear.com/images/android-chrome-512x512.png",
-
-                order_id:
-                    razorpayOrder.id,
-
-
-                /* =========================================
-                    CUSTOMER PREFILL
-                ========================================= */
-
-                prefill: {
-
-                    name:
-                        customer.name,
-
-                    email:
-                        customer.email,
-
-                    contact:
-                        "+91" +
-                        customer.phone
-
-                },
-
-
-                /* =========================================
-                    THEME
-                ========================================= */
-
-                theme: {
-
-                    color:
-                        "#F26A21"
-
-                },
-
-
-                /* =========================================
-                    SUCCESS HANDLER
-                ========================================= */
-
-                handler:
-                    async function (
-                        paymentResponse
-                    ) {
-
-
-                        try {
-
-
-                            updateLoading(
-                                "Verifying payment..."
-                            );
-
-
-                            console.log(
-                                "Razorpay payment response:",
-                                paymentResponse
-                            );
-
-
-                            /* =================================
-                                VERIFY SIGNATURE
-                            ================================= */
-
-                            const verification =
-                                await verifyRazorpayPayment(
-
-                                    paymentResponse
-                                        .razorpay_order_id,
-
-                                    paymentResponse
-                                        .razorpay_payment_id,
-
-                                    paymentResponse
-                                        .razorpay_signature
-
-                                );
-
-
-                            console.log(
-                                "Razorpay verification:",
-                                verification
-                            );
-
-
-                            if (
-                                !verification.success ||
-                                !verification.verified
-                            ) {
-
-                                throw new Error(
-                                    "Payment verification failed."
-                                );
-
-                            }
-
-
-                            /* =================================
-                                SAVE PAID ORDER
-                            ================================= */
-
-                            updateLoading(
-                                "Confirming your order..."
-                            );
-
-
-                            const savedOrder =
-                                await savePaidOrder({
-
-                                    name:
-                                        customer.name,
-
-                                    email:
-                                        customer.email,
-
-                                    phone:
-                                        customer.phone,
-
-                                    address:
-                                        customer.address,
-
-                                    city:
-                                        customer.city,
-
-                                    state:
-                                        customer.state,
-
-                                    pin:
-                                        customer.pin,
-
-                                    items:
-                                        cart,
-
-                                    total:
-                                        subtotal,
-
-                                    razorpayOrderId:
-                                        paymentResponse
-                                            .razorpay_order_id,
-
-                                    razorpayPaymentId:
-                                        paymentResponse
-                                            .razorpay_payment_id,
-
-                                    razorpaySignature:
-                                        paymentResponse
-                                            .razorpay_signature
-
-                                });
-
-
-                            if (
-                                !savedOrder.success
-                            ) {
-
-                                throw new Error(
-                                    "Payment succeeded but order could not be saved."
-                                );
-
-                            }
-
-
-                            const orderId =
-                                savedOrder.orderId;
-
-
-                            /* =================================
-                                META PIXEL PURCHASE
-                            ================================= */
-
-                            trackPurchase(
-                                cart,
-                                subtotal,
-                                orderId
-                            );
-
-
-                            /* =================================
-                                WHATSAPP
-                            ================================= */
-
-                            const whatsappMessage =
-                                createWhatsAppMessage(
-
-                                    orderId,
-
-                                    customer,
-
-                                    cart,
-
-                                    subtotal,
-
-                                    paymentResponse
-                                        .razorpay_payment_id
-
-                                );
-
-
-                            /* =================================
-                                CLEAR CART
-                            ================================= */
-
-                            localStorage.removeItem(
-                                CART_STORAGE_KEY
-                            );
-
-
-                            /* =================================
-                                STOP LOADING
-                            ================================= */
-
-                            stopLoading();
-
-                            isSubmitting =
-                                false;
-
-
-                            /* =================================
-                                SUCCESS MESSAGE
-                            ================================= */
-
-                            alert(
-                                "Payment successful!\n\nYour YUGA Order ID is " +
-                                orderId
-                            );
-
-
-                            /* =================================
-                                OPEN WHATSAPP
-                            ================================= */
-
-                            openWhatsApp(
-                                whatsappMessage
-                            );
-
-
-                        } catch (
-                            verificationError
-                        ) {
-
-
-                            console.error(
-                                "YUGA payment processing error:",
-                                verificationError
-                            );
-
-
-                            stopLoading();
-
-                            isSubmitting =
-                                false;
-
-
-                            alert(
-                                "Payment was received, but we could not complete the order confirmation automatically. Please contact YUGA support and provide your Razorpay Payment ID:\n\n" +
-                                paymentResponse.razorpay_payment_id
-                            );
-
-                        }
-
-                    },
-
-
-                /* =========================================
-                    PAYMENT MODAL
-                ========================================= */
-
-                modal: {
-
-                    ondismiss:
-                        function () {
-
-                            console.log(
-                                "Razorpay checkout closed."
-                            );
-
-                            stopLoading();
-
-                            isSubmitting =
-                                false;
-
-                        }
-
-                },
-
-
-                /* =========================================
-                    PAYMENT FAILURE
-                ========================================= */
-
-                notes: {
-
-                    brand:
-                        "YUGA WEAR",
-
-                    receipt:
-                        receipt
-
-                }
+                    document
+                        .getElementById(
+                            "customerName"
+                        )
+                        .value
+                        .trim(),
+
+                email:
+                    document
+                        .getElementById(
+                            "customerEmail"
+                        )
+                        .value
+                        .trim(),
+
+                phone:
+                    document
+                        .getElementById(
+                            "customerPhone"
+                        )
+                        .value
+                        .trim(),
+
+                address:
+                    document
+                        .getElementById(
+                            "customerAddress"
+                        )
+                        .value
+                        .trim(),
+
+                city:
+                    document
+                        .getElementById(
+                            "customerCity"
+                        )
+                        .value
+                        .trim(),
+
+                state:
+                    document
+                        .getElementById(
+                            "customerState"
+                        )
+                        .value
+                        .trim(),
+
+                pin:
+                    document
+                        .getElementById(
+                            "customerPin"
+                        )
+                        .value
+                        .trim()
 
             };
 
 
-            const razorpay =
-                new Razorpay(
-                    options
+            /* =========================================
+                    SAVE CUSTOMER DETAILS
+            ========================================= */
+
+            saveCustomerDetails();
+
+
+            /* =========================================
+                    GET CART
+            ========================================= */
+
+            const cart =
+                getCart();
+
+
+            if (
+                !cart ||
+                cart.length === 0
+            ) {
+
+                alert(
+                    "Your cart is empty."
+                );
+
+                window.location.href =
+                    "cart.html";
+
+                return;
+
+            }
+
+
+            /* =========================================
+                    CALCULATE TOTAL
+            ========================================= */
+
+            const subtotal =
+                calculateCartTotal(
+                    cart
                 );
 
 
-            /* =============================================
-                PAYMENT FAILED EVENT
-            ============================================= */
+            if (
+                !subtotal ||
+                subtotal <= 0
+            ) {
 
-            razorpay.on(
-                "payment.failed",
-                function (
-                    response
-                ) {
+                alert(
+                    "Invalid order amount."
+                );
 
-                    handlePaymentFailure(
-                        response
-                    );
+                return;
 
-                }
+            }
+
+
+            /* =========================================
+                    META PIXEL
+                    INITIATE CHECKOUT
+            ========================================= */
+
+            trackInitiateCheckout(
+                cart,
+                subtotal
             );
 
 
-            /* =============================================
-                OPEN CHECKOUT
-            ============================================= */
-
-            razorpay.open();
-
-
-        } catch (error) {
-
-
-            console.error(
-                "YUGA checkout error:",
-                error
-            );
-
-
-            stopLoading();
+            /* =========================================
+                    START PROCESS
+            ========================================= */
 
             isSubmitting =
-                false;
+                true;
 
-
-            alert(
-                error.message ||
-                "Unable to start payment. Please try again."
+            startLoading(
+                "Preparing payment..."
             );
 
-        }
 
-    }
-);
+            try {
+
+
+                /* =====================================
+                        UNIQUE RECEIPT
+                ===================================== */
+
+                const receipt =
+                    "YUGA_" +
+                    Date.now();
+
+
+                /* =====================================
+                        CREATE RAZORPAY ORDER
+                ===================================== */
+
+                updateLoading(
+                    "Connecting to Razorpay..."
+                );
+
+
+                const razorpayOrder =
+                    await createRazorpayOrder(
+                        subtotal,
+                        receipt
+                    );
+
+
+                console.log(
+                    "YUGA Razorpay Order:",
+                    razorpayOrder
+                );
+
+
+                /* =====================================
+                        OPEN RAZORPAY CHECKOUT
+                ===================================== */
+
+                updateLoading(
+                    "Opening secure payment..."
+                );
+
+
+                const options = {
+
+                    key:
+                        RAZORPAY_KEY_ID,
+
+                    amount:
+                        razorpayOrder.amount,
+
+                    currency:
+                        razorpayOrder.currency ||
+                        "INR",
+
+                    name:
+                        "YUGA WEAR",
+
+                    description:
+                        "YUGA — India Reimagined",
+
+                    image:
+                        "https://yugawear.com/images/android-chrome-512x512.png",
+
+                    order_id:
+                        razorpayOrder.id,
+
+
+                    /* =================================
+                            CUSTOMER PREFILL
+                    ================================= */
+
+                    prefill: {
+
+                        name:
+                            customer.name,
+
+                        email:
+                            customer.email,
+
+                        contact:
+                            "+91" +
+                            customer.phone
+
+                    },
+
+
+                    /* =================================
+                            THEME
+                    ================================= */
+
+                    theme: {
+
+                        color:
+                            "#F26A21"
+
+                    },
+
+
+                    /* =================================
+                            SUCCESS HANDLER
+                    ================================= */
+
+                    handler:
+                        async function (
+                            paymentResponse
+                        ) {
+
+                            try {
+
+
+                                /* =========================
+                                        VERIFYING PAYMENT
+                                ========================= */
+
+                                updateLoading(
+                                    "Verifying payment..."
+                                );
+
+
+                                console.log(
+                                    "YUGA Razorpay payment response:",
+                                    paymentResponse
+                                );
+
+
+                                /* =========================
+                                        VERIFY SIGNATURE
+                                ========================= */
+
+                                const verification =
+                                    await verifyRazorpayPayment(
+
+                                        paymentResponse
+                                            .razorpay_order_id,
+
+                                        paymentResponse
+                                            .razorpay_payment_id,
+
+                                        paymentResponse
+                                            .razorpay_signature
+
+                                    );
+
+
+                                console.log(
+                                    "YUGA Razorpay verification:",
+                                    verification
+                                );
+
+
+                                if (
+                                    !verification.success ||
+                                    !verification.verified
+                                ) {
+
+                                    throw new Error(
+                                        "Payment verification failed."
+                                    );
+
+                                }
+
+
+                                /* =========================
+                                        SAVE PAID ORDER
+                                ========================= */
+
+                                updateLoading(
+                                    "Confirming your order..."
+                                );
+
+
+                                const savedOrder =
+                                    await savePaidOrder({
+
+                                        name:
+                                            customer.name,
+
+                                        email:
+                                            customer.email,
+
+                                        phone:
+                                            customer.phone,
+
+                                        address:
+                                            customer.address,
+
+                                        city:
+                                            customer.city,
+
+                                        state:
+                                            customer.state,
+
+                                        pin:
+                                            customer.pin,
+
+                                        items:
+                                            cart,
+
+                                        total:
+                                            subtotal,
+
+                                        razorpayOrderId:
+                                            paymentResponse
+                                                .razorpay_order_id,
+
+                                        razorpayPaymentId:
+                                            paymentResponse
+                                                .razorpay_payment_id,
+
+                                        razorpaySignature:
+                                            paymentResponse
+                                                .razorpay_signature
+
+                                    });
+
+
+                                if (
+                                    !savedOrder.success
+                                ) {
+
+                                    throw new Error(
+                                        "Payment succeeded but order could not be saved."
+                                    );
+
+                                }
+
+
+                                /* =========================
+                                        YUGA ORDER ID
+                                ========================= */
+
+                                const orderId =
+                                    savedOrder.orderId;
+
+
+                                console.log(
+                                    "YUGA Order ID:",
+                                    orderId
+                                );
+
+
+                                /* =========================
+                                        META PIXEL PURCHASE
+                                ========================= */
+
+                                trackPurchase(
+                                    cart,
+                                    subtotal,
+                                    orderId
+                                );
+
+
+                                /* =========================
+                                        SAVE ORDER FOR
+                                        THANK YOU PAGE
+                                ========================= */
+
+                                const lastOrder = {
+
+                                    orderId:
+                                        orderId,
+
+                                    date:
+                                        new Date()
+                                            .toISOString(),
+
+                                    total:
+                                        subtotal,
+
+                                    customer: {
+
+                                        name:
+                                            customer.name,
+
+                                        email:
+                                            customer.email,
+
+                                        phone:
+                                            customer.phone,
+
+                                        address:
+                                            customer.address,
+
+                                        city:
+                                            customer.city,
+
+                                        state:
+                                            customer.state,
+
+                                        pin:
+                                            customer.pin
+
+                                    },
+
+                                    items:
+                                        cart,
+
+                                    payment: {
+
+                                        razorpayOrderId:
+                                            paymentResponse
+                                                .razorpay_order_id,
+
+                                        razorpayPaymentId:
+                                            paymentResponse
+                                                .razorpay_payment_id,
+
+                                        razorpaySignature:
+                                            paymentResponse
+                                                .razorpay_signature
+
+                                    }
+
+                                };
+
+
+                                saveOrderForThankYouPage(
+                                    lastOrder
+                                );
+
+
+                                /* =========================
+                                        CLEAR CART
+                                ========================= */
+
+                                localStorage.removeItem(
+                                    CART_STORAGE_KEY
+                                );
+
+
+                                /* =========================
+                                        STOP LOADING
+                                ========================= */
+
+                                stopLoading();
+
+                                isSubmitting =
+                                    false;
+
+
+                                /* =========================
+                                        REDIRECT
+                                        THANK YOU PAGE
+                                ========================= */
+
+                                window.location.href =
+                                    "thankyou.html";
+
+
+                            } catch (
+                                verificationError
+                            ) {
+
+
+                                console.error(
+                                    "YUGA payment processing error:",
+                                    verificationError
+                                );
+
+
+                                stopLoading();
+
+                                isSubmitting =
+                                    false;
+
+
+                                alert(
+                                    "Payment was received, but we could not complete the order confirmation automatically.\n\nPlease contact YUGA support and provide your Razorpay Payment ID:\n\n" +
+                                    (
+                                        paymentResponse &&
+                                        paymentResponse.razorpay_payment_id
+                                            ? paymentResponse.razorpay_payment_id
+                                            : "Unavailable"
+                                    )
+                                );
+
+                            }
+
+                        },
+
+
+                    /* =================================
+                            PAYMENT MODAL
+                    ================================= */
+
+                    modal: {
+
+                        ondismiss:
+                            function () {
+
+                                console.log(
+                                    "YUGA: Razorpay checkout closed."
+                                );
+
+
+                                stopLoading();
+
+                                isSubmitting =
+                                    false;
+
+                            }
+
+                    },
+
+
+                    /* =================================
+                            PAYMENT NOTES
+                    ================================= */
+
+                    notes: {
+
+                        brand:
+                            "YUGA WEAR",
+
+                        receipt:
+                            receipt
+
+                    }
+
+                };
+
+
+                /* =====================================
+                        CREATE RAZORPAY INSTANCE
+                ===================================== */
+
+                const razorpay =
+                    new Razorpay(
+                        options
+                    );
+
+
+                /* =====================================
+                        PAYMENT FAILED EVENT
+                ===================================== */
+
+                razorpay.on(
+                    "payment.failed",
+                    function (
+                        response
+                    ) {
+
+                        handlePaymentFailure(
+                            response
+                        );
+
+                    }
+                );
+
+
+                /* =====================================
+                        OPEN RAZORPAY CHECKOUT
+                ===================================== */
+
+                razorpay.open();
+
+
+            } catch (error) {
+
+
+                console.error(
+                    "YUGA checkout error:",
+                    error
+                );
+
+
+                stopLoading();
+
+                isSubmitting =
+                    false;
+
+
+                alert(
+                    error.message ||
+                    "Unable to start payment. Please try again."
+                );
+
+            }
+
+        }
+    );
+
+}
 
 
 /* =========================================================
@@ -1863,3 +2004,10 @@ placeOrder.addEventListener(
 
     }
 );
+
+
+/* =========================================================
+        INITIALIZE CHECKOUT
+========================================================= */
+
+renderCheckout();
