@@ -68,7 +68,7 @@ const ORDER_API =
 */
 
 const RAZORPAY_KEY_ID =
-    "rzp_test_TSMxJ1qO9OjBZ2";
+    "rzp_live_TXtXXiRokQDV2L";
 
 
 /* =========================================================
