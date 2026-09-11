@@ -9,7 +9,7 @@ const PRODUCTS = {
         collection: "Architecture Collection",
 
         price: 1199,
-        originalPrice: 1699,
+        originalPrice: 1899,
 
         description:
             "Inspired by the 11th-century stepwell of Rani Ki Vav.",
@@ -68,7 +68,7 @@ const PRODUCTS = {
     collection: "Architecture Collection",
 
     price: 1199,
-    originalPrice: 1699,
+    originalPrice: 1899,
 
     description:
         "Inspired by the timeless rock-cut caves of Ellora, where architecture, spirituality, and craftsmanship unite in stone.",
@@ -161,7 +161,7 @@ const PRODUCTS = {
     collection:"Arts Collection",
 
     price: 1199,
-    originalPrice: 1699,
+    originalPrice: 1899,
 
     description:
         "Inspired by Kerala's legendary Kathakali dance theatre, transforming centuries of storytelling into contemporary streetwear.",
@@ -255,7 +255,7 @@ const PRODUCTS = {
     collection:"Arts Collection",
 
     price: 1199,
-    originalPrice: 1699,
+    originalPrice: 1899,
 
     description:
         "Inspired by Theyyam, one of India's oldest living ritual art forms, celebrating mythology, performance, and cultural identity.",
