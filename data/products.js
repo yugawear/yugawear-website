@@ -8,7 +8,7 @@ const PRODUCTS = {
 
         collection: "Architecture Collection",
 
-        price: 1499,
+        price: 1199,
         originalPrice: 1699,
 
         description:
@@ -67,7 +67,7 @@ const PRODUCTS = {
 
     collection: "Architecture Collection",
 
-    price: 1499,
+    price: 1199,
     originalPrice: 1699,
 
     description:
@@ -160,7 +160,7 @@ const PRODUCTS = {
 
     collection:"Arts Collection",
 
-    price: 1499,
+    price: 1199,
     originalPrice: 1699,
 
     description:
@@ -254,7 +254,7 @@ const PRODUCTS = {
 
     collection:"Arts Collection",
 
-    price: 1499,
+    price: 1199,
     originalPrice: 1699,
 
     description:
