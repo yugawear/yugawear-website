@@ -862,6 +862,33 @@ src="https://www.facebook.com/tr?id=1617467663147016&ev=PageView&noscript=1"
 
 <script src="data/products.js"></script>
 
+    <script>
+    const priceElements = document.querySelectorAll("[data-product-price], .price[id^='price-']");
+
+    priceElements.forEach(function (element) {
+
+        let productId;
+
+        if (element.dataset.productPrice) {
+            productId = element.dataset.productPrice;
+        } else {
+            productId = element.id.replace("price-", "");
+        }
+
+        const product = PRODUCTS[productId];
+
+        if (product) {
+
+            element.textContent =
+                "₹" +
+                product.price.toLocaleString("en-IN") +
+                "/-";
+
+        }
+
+    });
+</script>
+
 <script src="components/cart-item.js"></script>
 
 <script src="js/components.js"></script>
