@@ -624,7 +624,7 @@
 
 .product-category{
 
-    font-size:6px;
+    font-size:8px;
 
 }
 .product-info h1{
@@ -647,10 +647,14 @@
 
 .price{
 
-    font-size:34px;
+    font-size:20px;
 
-    margin:14px 0;
+    margin-bottom: 14px;
 
+}
+
+.product-info a {
+    display: none;
 }
 
 .short-description{
