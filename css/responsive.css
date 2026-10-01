@@ -637,6 +637,10 @@
 
 }
 
+.products {
+    padding: 40px 0;
+}
+
 .product-info h3{
 
     font-size:14px;
