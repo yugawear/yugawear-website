@@ -606,6 +606,22 @@
         display:none;
 }
 
+.product-price {
+    display: flex;
+    margin-top: auto;
+    padding-top: 0px;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px;
+    flex: 1;
+}
+
 .product-category{
 
     font-size:6px;
