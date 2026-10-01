@@ -602,6 +602,10 @@
 
 }
 
+.product-info p{
+        display:none;
+}
+
 .product-category{
 
     font-size:6px;
